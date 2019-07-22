@@ -9,15 +9,28 @@
 import UIKit
 import dbt_sdk
 
-class BibleViewController: UIViewController {
+protocol isAbleToReceiveData {
+    func pass(book: String)  //data: string is an example parameter
+}
+
+class BibleViewController: UIViewController, isAbleToReceiveData {
+    var booksArray: [DBTBook] = []
+    var currentBook: String = ""
     
-    public var booksArray: [DBTBook] = []
+    func pass(book: String) {
+        currentBook = book
+    }
     
     override func viewWillAppear(_ animated: Bool) {
+        print(currentBook)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
         // Getting the Bible books
         DBT.getLibraryBook(withDamId: "ARBWTCO1ET", success: { (books) in
             if let books = books {
-                
                 self.booksArray = books as! [DBTBook]
             }
         }) { (error) in
@@ -25,15 +38,8 @@ class BibleViewController: UIViewController {
                 print("Error: \(error)")
             }
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
-
         self.title = "Bible"
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,6 +47,7 @@ class BibleViewController: UIViewController {
             if let booksTable = segue.destination as? BooksTableViewController
             {
                 booksTable.books = booksArray
+                booksTable.delegate = self
             }
         }
     }

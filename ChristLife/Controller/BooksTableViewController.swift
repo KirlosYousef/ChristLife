@@ -10,12 +10,15 @@ import UIKit
 import dbt_sdk
 
 class BooksTableViewController: UITableViewController {
-
+    
+    var delegate: isAbleToReceiveData?
     var books: [DBTBook] = []
+    var selectedBook: String = "Josh"
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        
+        self.tableView.rowHeight = 50
         self.tableView.reloadData()
         
         // Uncomment the following line to preserve selection between presentations
@@ -33,15 +36,10 @@ class BooksTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
-//        print(books)
         return books.count
     }
     
@@ -57,6 +55,34 @@ class BooksTableViewController: UITableViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "bookToChapterSegue"{
+            if let chaptersTableView = segue.destination as? ChaptersTableViewController
+            {
+                DBT.getLibraryChapter(withDamId: "ARBWTCO1ET", bookId: selectedBook, success: { libraryChapters in
+                    if let libraryChapters = libraryChapters {
+                        chaptersTableView.chapters = libraryChapters as! [DBTChapter]
+                        
+                    }
+                }, failure: { error in
+                    if let error = error {
+                        print("Error: \(error)")
+                    }
+                })
+                 chaptersTableView.currentBook = self.selectedBook
+            }
+        }
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedBook = books[indexPath.row].bookId
+        delegate?.pass(book: selectedBook) //call the func in the previous vc
+        performSegue(withIdentifier: "bookToChapterSegue", sender: nil)
+        //        dismiss(animated: true, completion: nil)
+    }
+
+ 
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
