@@ -1,0 +1,39 @@
+PODS:
+  - dbt-sdk (0.2.2)
+  - MaterialComponents/BottomNavigation (76.1.2):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/Ink (76.1.2):
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Application (76.1.2)
+  - MaterialComponents/private/Math (76.1.2)
+  - MaterialComponents/ShadowElevations (76.1.2)
+  - MaterialComponents/ShadowLayer (76.1.2):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Typography (76.1.2):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+
+DEPENDENCIES:
+  - dbt-sdk (~> 0.2.2)
+  - MaterialComponents/BottomNavigation
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - dbt-sdk
+    - MaterialComponents
+    - MDFInternationalization
+
+SPEC CHECKSUMS:
+  dbt-sdk: 8658548153d0c016b6bfd4adee64f457e17b2db4
+  MaterialComponents: 1aef341d47fbaed37ddb5163a01af94cb6da8506
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+
+PODFILE CHECKSUM: d541866daee17d2584c3d67e12829710c7cd7bbe
+
+COCOAPODS: 1.6.0
