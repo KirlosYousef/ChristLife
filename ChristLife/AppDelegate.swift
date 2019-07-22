@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import dbt_sdk
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        [DBT setAPIKey:@"0722924a005918c1d4f6e5297c909438"];
+        DBT.setAPIKey("0722924a005918c1d4f6e5297c909438")
         return true
     }
 

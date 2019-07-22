@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NOn-7N-Bdd">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4Yz-Mb-tIc">
+            <objects>
+                <viewController id="IOV-x0-WXg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9mG-Ut-842">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wL6-1a-SQO"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="4OK-1y-Lei"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ka7-pO-BSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="389"/>
+        </scene>
+        <!--Books Table View Controller-->
+        <scene sceneID="ozu-oE-nQP">
+            <objects>
+                <tableViewController id="0iF-x2-UYf" customClass="BooksTableViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="91I-JM-zWA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" id="eBR-tU-ca2" customClass="BookTableViewCell" customModule="ChristLife" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBR-tU-ca2" id="TCa-4o-Zmw">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsa-mg-Xpd">
+                                            <rect key="frame" x="20" y="11" width="374" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Nsa-mg-Xpd" firstAttribute="leading" secondItem="TCa-4o-Zmw" secondAttribute="leadingMargin" id="3cD-KT-TcT"/>
+                                        <constraint firstItem="Nsa-mg-Xpd" firstAttribute="top" secondItem="TCa-4o-Zmw" secondAttribute="topMargin" id="dXy-us-5hq"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Nsa-mg-Xpd" secondAttribute="bottom" id="kgc-qi-of5"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Nsa-mg-Xpd" secondAttribute="trailing" id="lO7-O1-3PA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="BookName" destination="Nsa-mg-Xpd" id="2un-dp-gQf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0iF-x2-UYf" id="S8k-rX-GDH"/>
+                            <outlet property="delegate" destination="0iF-x2-UYf" id="8Bx-8c-WZB"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="الغاء" id="L9D-S4-61k"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mZR-UV-oXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2616" y="-895"/>
+        </scene>
+        <!--Bible-->
+        <scene sceneID="AXG-x1-ISG">
+            <objects>
+                <viewController id="7je-88-nPT" customClass="BibleViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6R3-Lq-nqY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWv-KT-zR1">
+                                <rect key="frame" x="0.0" y="33" width="414" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="الكتاب المقدس" id="f9L-la-BfX">
+                                        <barButtonItem key="leftBarButtonItem" id="A3a-JV-X5U">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Ib-vE-fZD">
+                                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="Books"/>
+                                                <connections>
+                                                    <segue destination="0iF-x2-UYf" kind="popoverPresentation" identifier="bibleToBooksSegue" popoverAnchorView="1Ib-vE-fZD" id="q0n-Od-hQS">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U59-Qq-YaL">
+                                <rect key="frame" x="0.0" y="77" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KWv-KT-zR1" firstAttribute="leading" secondItem="5WQ-Rn-MT1" secondAttribute="leading" id="Lno-0W-lcC"/>
+                            <constraint firstItem="KWv-KT-zR1" firstAttribute="trailing" secondItem="5WQ-Rn-MT1" secondAttribute="trailing" id="URr-x7-Dav"/>
+                            <constraint firstItem="U59-Qq-YaL" firstAttribute="top" secondItem="KWv-KT-zR1" secondAttribute="bottom" id="YKm-JP-Dpw"/>
+                            <constraint firstItem="KWv-KT-zR1" firstAttribute="top" secondItem="6R3-Lq-nqY" secondAttribute="top" constant="33" id="Z1Y-Lr-zju"/>
+                            <constraint firstItem="U59-Qq-YaL" firstAttribute="leading" secondItem="5WQ-Rn-MT1" secondAttribute="leading" id="eEi-tQ-lif"/>
+                            <constraint firstItem="U59-Qq-YaL" firstAttribute="bottom" secondItem="5WQ-Rn-MT1" secondAttribute="bottom" id="sbM-Vo-wuF"/>
+                            <constraint firstItem="U59-Qq-YaL" firstAttribute="trailing" secondItem="5WQ-Rn-MT1" secondAttribute="trailing" id="uQv-aq-1Ui"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5WQ-Rn-MT1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bible" image="BibleIcon" id="j1b-Gg-ui3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ng-AZ-nIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837.68115942029" y="-346.20535714285711"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="uYJ-Lb-q3Z">
+            <objects>
+                <tabBarController id="NOn-7N-Bdd" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TBb-Al-3rr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7je-88-nPT" kind="relationship" relationship="viewControllers" id="GKK-l2-rlF"/>
+                        <segue destination="IOV-x0-WXg" kind="relationship" relationship="viewControllers" id="JZi-up-AFV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYT-yh-ahW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="919" y="65"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BibleIcon" width="30" height="30"/>
+    </resources>
+</document>
