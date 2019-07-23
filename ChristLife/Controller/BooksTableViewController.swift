@@ -14,27 +14,18 @@ class BooksTableViewController: UITableViewController {
     var delegate: isAbleToReceiveData?
     var books: [DBTBook] = []
     var selectedBook: String = "Josh"
+    var selectedChapter: String = "1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getBooks()
         self.tableView.rowHeight = 50
-        self.tableView.reloadData()
-        
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.clearsSelectionOnViewWillAppear = false
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.tableView.reloadData()
-    }
+    
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -49,7 +40,6 @@ class BooksTableViewController: UITableViewController {
         guard let cell: BookTableViewCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? BookTableViewCell else {
             fatalError("The dequeued cell is not an instance of BookTableViewCell.")
         }
-        // Configure the cell...
         cell.BookName.text = books[indexPath.row].bookName
         return cell
     }
@@ -59,17 +49,7 @@ class BooksTableViewController: UITableViewController {
         if segue.identifier == "bookToChapterSegue"{
             if let chaptersTableView = segue.destination as? ChaptersTableViewController
             {
-                DBT.getLibraryChapter(withDamId: "ARBWTCO1ET", bookId: selectedBook, success: { libraryChapters in
-                    if let libraryChapters = libraryChapters {
-                        chaptersTableView.chapters = libraryChapters as! [DBTChapter]
-                        
-                    }
-                }, failure: { error in
-                    if let error = error {
-                        print("Error: \(error)")
-                    }
-                })
-                 chaptersTableView.currentBook = self.selectedBook
+                chaptersTableView.currentBook = self.selectedBook
             }
         }
     }
@@ -77,12 +57,24 @@ class BooksTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedBook = books[indexPath.row].bookId
-        delegate?.pass(book: selectedBook) //call the func in the previous vc
+        delegate?.pass(book: selectedBook, chapter: selectedChapter) //call the func in the previous vc
         performSegue(withIdentifier: "bookToChapterSegue", sender: nil)
-        //        dismiss(animated: true, completion: nil)
     }
-
- 
+    
+    // Getting the Bible books
+    func getBooks() {
+        DBT.getLibraryBook(withDamId: "ARBWTCO1ET", success: { (books) in
+            if let books = books {
+                self.books = books as! [DBTBook]
+                self.tableView.reloadData()
+            }
+        }) { (error) in
+            if let error = error {
+                print("Error: \(error)")
+            }
+        }
+    }
+    
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
