@@ -21,19 +21,11 @@ class ChaptersTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = bibleVC
         getChapters()
         self.tableView.rowHeight = 50
         // Uncomment the following line to preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
     }
-    
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(true)
-//        tableView.reloadData()
-//    }
-    
     
     // MARK: - Table view data source
     
@@ -59,10 +51,6 @@ class ChaptersTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let selectedChapter = Int(chapters[indexPath.row].chapterId) {
-//            print("Book: \(currentBook), Chapter: \(selectedChapter)")
-//            if let delegate = self.delegate{
-//                delegate.pass(book: currentBook, chapter: selectedChapter) //call the func in the previous vc
-//            }
             doDismiss(book: currentBook, chapter: selectedChapter)
         }
     }

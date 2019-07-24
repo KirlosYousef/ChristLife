@@ -11,10 +11,10 @@ import dbt_sdk
 
 class BooksTableViewController: UITableViewController{
     
-//    var delegate: isAbleToReceiveData?
     var books: [DBTBook] = []
     var selectedBook: String = "Josh"
     var selectedChapter: String = "1"
+    var delegate: isAbleToReceiveData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,17 +49,14 @@ class BooksTableViewController: UITableViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "bookToChapterSegue"{
-            if let chaptersTableView = segue.destination as? ChaptersTableViewController
-            {
-                chaptersTableView.currentBook = self.selectedBook
-//                chaptersTableView.delegate = self
-            }
+            let chaptersTableView = segue.destination as! ChaptersTableViewController
+            chaptersTableView.currentBook = self.selectedBook
+            chaptersTableView.delegate = self.delegate
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedBook = books[indexPath.row].bookId
-//        delegate?.pass(book: selectedBook, chapter: selectedChapter) //call the func in the previous vc
         performSegue(withIdentifier: "bookToChapterSegue", sender: nil)
     }
     

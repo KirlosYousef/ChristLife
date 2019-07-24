@@ -14,13 +14,20 @@ protocol isAbleToReceiveData{
 }
 
 class BibleViewController: UIViewController, isAbleToReceiveData{
-
+    
     var verses: [DBTVerse] = []
     var text: String = ""
     var currentBook: String = "Ruth"
     var currentChapter: Int = 1
-
+    
     @IBOutlet weak var versesTextView: UITextView!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "bibleToBooksSegue"{
+            let BooksVC = segue.destination as! BooksTableViewController
+            BooksVC.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,33 +38,30 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     func pass(book: String, chapter: Int) {
         self.currentBook = book
         self.currentChapter = chapter
-        }
-
-
+    }
+    
+    
     func data(verses: [DBTVerse]) {
+        text = ""
         for verse in verses{
             if let chapter: Int = verse.verseId?.intValue{
-            text.append(String(chapter))
-            text.append(verse.verseText)
+                text.append(String(chapter))
+                text.append(verse.verseText)
             }
         }
         updateData(text: text)
     }
-
+    
     func updateData(text: String){
         if let textView = self.versesTextView {
-        textView.text = text
-        textView.setNeedsDisplay()
+            textView.text = text
         }
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         getVerses(book: self.currentBook, Chapter: NSNumber(value: self.currentChapter))
-        
-        print(currentBook, currentChapter)
-        // current output "test" "1"
     }
     
     
@@ -65,8 +69,8 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     func getVerses(book: String, Chapter: NSNumber) {
         DBT.getTextVerse(withDamId: "ARBWTCO1ET", book: book, chapter: Chapter, verseStart: nil, verseEnd: nil, success: { (verse) in
             if let verse = verse {
-                    self.verses = verse as! [DBTVerse]
-                    self.data(verses: self.verses)
+                self.verses = verse as! [DBTVerse]
+                self.data(verses: self.verses)
             }
         }) { (error) in
             if let error = error {
