@@ -9,9 +9,9 @@
 import UIKit
 import dbt_sdk
 
-class BooksTableViewController: UITableViewController {
+class BooksTableViewController: UITableViewController{
     
-    var delegate: isAbleToReceiveData?
+//    var delegate: isAbleToReceiveData?
     var books: [DBTBook] = []
     var selectedBook: String = "Josh"
     var selectedChapter: String = "1"
@@ -25,10 +25,12 @@ class BooksTableViewController: UITableViewController {
     }
     
     
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return books.count
@@ -50,14 +52,14 @@ class BooksTableViewController: UITableViewController {
             if let chaptersTableView = segue.destination as? ChaptersTableViewController
             {
                 chaptersTableView.currentBook = self.selectedBook
+//                chaptersTableView.delegate = self
             }
         }
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedBook = books[indexPath.row].bookId
-        delegate?.pass(book: selectedBook, chapter: selectedChapter) //call the func in the previous vc
+//        delegate?.pass(book: selectedBook, chapter: selectedChapter) //call the func in the previous vc
         performSegue(withIdentifier: "bookToChapterSegue", sender: nil)
     }
     

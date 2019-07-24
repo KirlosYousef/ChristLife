@@ -9,29 +9,38 @@
 import UIKit
 import dbt_sdk
 
+
 class ChaptersTableViewController: UITableViewController {
-    var delegate: isAbleToReceiveData?
+    
+    
     var currentBook: String = ""
+    //    var currentChapter: Int = 1
     var chapters: [DBTChapter] = []
+    var bibleVC = BibleViewController()
+    var delegate: isAbleToReceiveData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = bibleVC
         getChapters()
         self.tableView.rowHeight = 50
         // Uncomment the following line to preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        tableView.reloadData()
-    }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(true)
+//        tableView.reloadData()
+//    }
+    
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chapters.count
@@ -47,12 +56,17 @@ class ChaptersTableViewController: UITableViewController {
         return cell
     }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedChapter: String = chapters[indexPath.row].chapterId
-        print("Book: \(currentBook), Chapter: \(selectedChapter)")
-        delegate?.pass(book: currentBook, chapter: selectedChapter) //call the func in the previous vc
-        dismiss(animated: true, completion: nil)
+        if let selectedChapter = Int(chapters[indexPath.row].chapterId) {
+//            print("Book: \(currentBook), Chapter: \(selectedChapter)")
+//            if let delegate = self.delegate{
+//                delegate.pass(book: currentBook, chapter: selectedChapter) //call the func in the previous vc
+//            }
+            doDismiss(book: currentBook, chapter: selectedChapter)
+        }
     }
+    
     
     // Get the bible chapters
     func getChapters() {
@@ -66,6 +80,16 @@ class ChaptersTableViewController: UITableViewController {
                 print("Error: \(error)")
             }
         })
+        
+    }
+    
+    func doDismiss(book: String, chapter: Int) {
+        if let delegate = self.delegate{
+            delegate.pass(book: book, chapter: chapter)
+        }
+        // Use presentingViewController twice to go back two levels and call
+        // dismissViewController to dismiss both viewControllers.
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     /*
