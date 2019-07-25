@@ -34,10 +34,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="sFW-cX-r42">
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" id="sFW-cX-r42">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" textContentType="name"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" id="eBR-tU-ca2" customClass="BookTableViewCell" customModule="ChristLife" customModuleProvider="target">
@@ -77,6 +77,7 @@
                         <barButtonItem systemItem="cancel" id="W6D-O7-ieb"/>
                     </toolbarItems>
                     <connections>
+                        <outlet property="searchBar" destination="sFW-cX-r42" id="311-hM-KYy"/>
                         <segue destination="6Wf-pf-1ml" kind="show" identifier="bookToChapterSegue" id="MM0-ZD-CYI"/>
                     </connections>
                 </tableViewController>
@@ -92,9 +93,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" id="znM-I5-cFw">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chapterCell" id="Bqu-ec-RvJ" customClass="ChapterTableViewCell" customModule="ChristLife" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bqu-ec-RvJ" id="hSo-Nu-Rl7">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -124,6 +130,9 @@
                             <outlet property="delegate" destination="6Wf-pf-1ml" id="MAc-eV-CUy"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="searchBar" destination="znM-I5-cFw" id="fGe-mg-BWw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IkK-FW-Q3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,15 +9,23 @@
 import UIKit
 import dbt_sdk
 
-class BooksTableViewController: UITableViewController{
+class BooksTableViewController: UITableViewController, UISearchBarDelegate{
     
+    @IBOutlet weak var searchBar: UISearchBar!
     var books: [DBTBook] = []
     var selectedBook: String = "Josh"
     var selectedChapter: String = "1"
     var delegate: isAbleToReceiveData?
+    var filteredBooks: [DBTBook] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+        //Setting the cancel button of the search bar always active
+        searchBar.resignFirstResponder()
+        if let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton{
+            cancelButton.isEnabled = true}
+    
         getBooks()
         self.tableView.rowHeight = 50
         // Uncomment the following line to preserve selection between presentations
@@ -34,7 +42,7 @@ class BooksTableViewController: UITableViewController{
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books.count
+        return filteredBooks.count
     }
     
     
@@ -43,7 +51,7 @@ class BooksTableViewController: UITableViewController{
         guard let cell: BookTableViewCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? BookTableViewCell else {
             fatalError("The dequeued cell is not an instance of BookTableViewCell.")
         }
-        cell.BookName.text = books[indexPath.row].bookName
+        cell.BookName.text = filteredBooks[indexPath.row].bookName
         return cell
     }
     
@@ -57,7 +65,7 @@ class BooksTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedBook = books[indexPath.row].bookId
+        selectedBook = filteredBooks[indexPath.row].bookId
         performSegue(withIdentifier: "bookToChapterSegue", sender: nil)
     }
     
@@ -66,6 +74,7 @@ class BooksTableViewController: UITableViewController{
         DBT.getLibraryBook(withDamId: "ARBWTCO1ET", success: { (books) in
             if let books = books {
                 self.books = books as! [DBTBook]
+                self.filteredBooks = self.books
                 self.tableView.reloadData()
             }
         }) { (error) in
@@ -73,6 +82,24 @@ class BooksTableViewController: UITableViewController{
                 print("Error: \(error)")
             }
         }
+    }
+    // This method updates filteredData based on the text in the Search Box
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // When there is no text, filteredData is the same as the original data
+        // When user has entered text into the search box
+        // Use the filter method to iterate over all items in the data array
+        // For each item, return true if the item should be included and false if the
+        // item should NOT be included
+        filteredBooks = searchText.isEmpty ? books : books.filter { (item: DBTBook) -> Bool in
+            // If dataItem matches the searchText, return true to include it
+            return item.bookName.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*

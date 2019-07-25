@@ -10,16 +10,24 @@ import UIKit
 import dbt_sdk
 
 
-class ChaptersTableViewController: UITableViewController {
+class ChaptersTableViewController: UITableViewController, UISearchBarDelegate {
     
     
+    @IBOutlet weak var searchBar: UISearchBar!
     var currentBook: String = ""
     var chapters: [DBTChapter] = []
     var bibleVC = BibleViewController()
     var delegate: isAbleToReceiveData?
+    var filteredChapters: [DBTChapter] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+        //Setting the cancel button of the search bar always active
+        searchBar.resignFirstResponder()
+        if let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton{
+            cancelButton.isEnabled = true}
+        
         getChapters()
         self.tableView.rowHeight = 50
         // Uncomment the following line to preserve selection between presentations
@@ -34,7 +42,7 @@ class ChaptersTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chapters.count
+        return filteredChapters.count
     }
     
     
@@ -43,13 +51,13 @@ class ChaptersTableViewController: UITableViewController {
             else {
                 fatalError("The dequeued cell is not an instance of BookTableViewCell.")
         }
-        cell.chapterNum.text = chapters[indexPath.row].chapterId
+        cell.chapterNum.text = filteredChapters[indexPath.row].chapterId
         return cell
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let selectedChapter = Int(chapters[indexPath.row].chapterId) {
+        if let selectedChapter = Int(filteredChapters[indexPath.row].chapterId) {
             doDismiss(book: currentBook, chapter: selectedChapter)
         }
     }
@@ -60,6 +68,7 @@ class ChaptersTableViewController: UITableViewController {
         DBT.getLibraryChapter(withDamId: "ARBWTCO1ET", bookId: currentBook, success: { libraryChapters in
             if let libraryChapters = libraryChapters {
                 self.chapters = libraryChapters as! [DBTChapter]
+                self.filteredChapters = self.chapters
                 self.tableView.reloadData()
             }
         }, failure: { error in
@@ -76,6 +85,25 @@ class ChaptersTableViewController: UITableViewController {
         }
         // Use presentingViewController twice to go back two levels and call
         // dismissViewController to dismiss both viewControllers.
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    // This method updates filteredData based on the text in the Search Box
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // When there is no text, filteredData is the same as the original data
+        // When user has entered text into the search box
+        // Use the filter method to iterate over all items in the data array
+        // For each item, return true if the item should be included and false if the
+        // item should NOT be included
+        filteredChapters = searchText.isEmpty ? chapters : chapters.filter { (item: DBTChapter) -> Bool in
+            // If dataItem matches the searchText, return true to include it
+            return item.chapterName.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
