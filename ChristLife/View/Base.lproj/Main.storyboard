@@ -137,11 +137,11 @@
                                 <items>
                                     <navigationItem title="الكتاب المقدس" id="f9L-la-BfX">
                                         <barButtonItem key="leftBarButtonItem" id="A3a-JV-X5U">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Ib-vE-fZD">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Ib-vE-fZD">
                                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                <state key="normal" title="Books"/>
+                                                <state key="normal" title="الاَناجيل"/>
                                                 <connections>
                                                     <segue destination="0iF-x2-UYf" kind="popoverPresentation" identifier="bibleToBooksSegue" popoverAnchorView="1Ib-vE-fZD" id="q0n-Od-hQS">
                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -173,6 +173,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Bible" image="BibleIcon" id="j1b-Gg-ui3"/>
                     <connections>
+                        <outlet property="biblePageTitle" destination="f9L-la-BfX" id="X5D-vx-v8G"/>
                         <outlet property="versesTextView" destination="U59-Qq-YaL" id="Y0f-Cq-fwE"/>
                     </connections>
                 </viewController>

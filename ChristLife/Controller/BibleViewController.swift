@@ -15,12 +15,13 @@ protocol isAbleToReceiveData{
 
 class BibleViewController: UIViewController, isAbleToReceiveData{
     
+    @IBOutlet weak var biblePageTitle: UINavigationItem!
+    @IBOutlet weak var versesTextView: UITextView!
     var verses: [DBTVerse] = []
     var text: String = ""
-    var currentBook: String = "Ruth"
+    var currentBookID: String = "Gen"
+    var currentBookName: String = ""
     var currentChapter: Int = 1
-    
-    @IBOutlet weak var versesTextView: UITextView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "bibleToBooksSegue"{
@@ -31,12 +32,11 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Bible"
     }
     
     
     func pass(book: String, chapter: Int) {
-        self.currentBook = book
+        self.currentBookID = book
         self.currentChapter = chapter
     }
     
@@ -49,19 +49,21 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
                 text.append(verse.verseText)
             }
         }
+        currentBookName = verses[0].bookName
         updateData(text: text)
     }
     
     func updateData(text: String){
         if let textView = self.versesTextView {
             textView.text = text
+            self.biblePageTitle.title = "\(currentBookName) \(currentChapter)"
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        getVerses(book: self.currentBook, Chapter: NSNumber(value: self.currentChapter))
+        getVerses(book: self.currentBookID, Chapter: NSNumber(value: self.currentChapter))
     }
     
     
