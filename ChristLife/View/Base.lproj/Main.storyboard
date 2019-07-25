@@ -18,27 +18,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كان الرب مع يوسف فكان ناجحاً فى كل اعمال حياته" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-9Q-KUT">
-                                <rect key="frame" x="20" y="64" width="374" height="729"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u4C-1k-hHo">
+                                <rect key="frame" x="30" y="94" width="354" height="719"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يسوع انهارده بيقولك: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvi-ah-47C">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="nA3-hP-1SD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="جار التحميل..." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-9Q-KUT">
+                                        <rect key="frame" x="0.0" y="60" width="354" height="589"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="P9O-FQ-wg3">
+                                        <rect key="frame" x="0.0" y="649" width="354" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPP-MT-1ND">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="70"/>
+                                                <state key="normal" title="ايه جديده"/>
+                                                <connections>
+                                                    <action selector="newVerseButton:" destination="IOV-x0-WXg" eventType="touchUpInside" id="cyx-Qa-8QC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xc-LI-FAk">
+                                                <rect key="frame" x="177" y="0.0" width="177" height="70"/>
+                                                <state key="normal" title="نشر"/>
+                                                <connections>
+                                                    <action selector="shareButton:" destination="IOV-x0-WXg" eventType="touchUpInside" id="kLm-iC-EC5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Uqq-Js-a2o"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mpc-9Q-KUT" firstAttribute="top" secondItem="wL6-1a-SQO" secondAttribute="top" constant="20" id="OOh-hc-6JY"/>
-                            <constraint firstItem="mpc-9Q-KUT" firstAttribute="leading" secondItem="wL6-1a-SQO" secondAttribute="leading" constant="20" id="dic-e3-hqU"/>
-                            <constraint firstItem="wL6-1a-SQO" firstAttribute="bottom" secondItem="mpc-9Q-KUT" secondAttribute="bottom" constant="20" id="fgl-D4-BdB"/>
-                            <constraint firstItem="wL6-1a-SQO" firstAttribute="trailing" secondItem="mpc-9Q-KUT" secondAttribute="trailing" constant="20" id="vdk-MZ-DYR"/>
+                            <constraint firstItem="wL6-1a-SQO" firstAttribute="trailing" secondItem="u4C-1k-hHo" secondAttribute="trailing" constant="30" id="cBq-d3-1Ne"/>
+                            <constraint firstItem="u4C-1k-hHo" firstAttribute="top" secondItem="wL6-1a-SQO" secondAttribute="top" constant="50" id="pzN-bu-AAN"/>
+                            <constraint firstItem="u4C-1k-hHo" firstAttribute="leading" secondItem="wL6-1a-SQO" secondAttribute="leading" constant="30" id="yL0-a6-imR"/>
+                            <constraint firstItem="wL6-1a-SQO" firstAttribute="bottom" secondItem="u4C-1k-hHo" secondAttribute="bottom" id="z1A-XV-GpZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wL6-1a-SQO"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="يسوع بيقولك" image="JesusSays" id="4OK-1y-Lei"/>
+                    <connections>
+                        <outlet property="verse" destination="mpc-9Q-KUT" id="dEE-ri-EDH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ka7-pO-BSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="389"/>
+            <point key="canvasLocation" x="1837.68115942029" y="388.39285714285711"/>
         </scene>
         <!--Books Table View Controller-->
         <scene sceneID="ozu-oE-nQP">
@@ -179,7 +218,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="U59-Qq-YaL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="جار التحميل..." textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="U59-Qq-YaL">
                                 <rect key="frame" x="0.0" y="77" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>

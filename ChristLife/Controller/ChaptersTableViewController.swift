@@ -67,7 +67,6 @@ class ChaptersTableViewController: UITableViewController, UISearchBarDelegate {
     
     // Get the bible chapters
     func getChapters() {
-        
         DBT.getLibraryChapter(withDamId: currentVolume, bookId: currentBook, success: { libraryChapters in
             if let libraryChapters = libraryChapters {
                 self.chapters = libraryChapters as! [DBTChapter]
@@ -79,7 +78,6 @@ class ChaptersTableViewController: UITableViewController, UISearchBarDelegate {
                 print("Error: \(error)")
             }
         })
-        
     }
     
     func doDismiss(book: String, chapter: Int) {
