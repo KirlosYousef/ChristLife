@@ -10,17 +10,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--يسوع بيقولك-->
         <scene sceneID="4Yz-Mb-tIc">
             <objects>
-                <viewController id="IOV-x0-WXg" customClass="ViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IOV-x0-WXg" customClass="JesusSaysViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9mG-Ut-842">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كان الرب مع يوسف فكان ناجحاً فى كل اعمال حياته" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-9Q-KUT">
+                                <rect key="frame" x="20" y="64" width="374" height="729"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mpc-9Q-KUT" firstAttribute="top" secondItem="wL6-1a-SQO" secondAttribute="top" constant="20" id="OOh-hc-6JY"/>
+                            <constraint firstItem="mpc-9Q-KUT" firstAttribute="leading" secondItem="wL6-1a-SQO" secondAttribute="leading" constant="20" id="dic-e3-hqU"/>
+                            <constraint firstItem="wL6-1a-SQO" firstAttribute="bottom" secondItem="mpc-9Q-KUT" secondAttribute="bottom" constant="20" id="fgl-D4-BdB"/>
+                            <constraint firstItem="wL6-1a-SQO" firstAttribute="trailing" secondItem="mpc-9Q-KUT" secondAttribute="trailing" constant="20" id="vdk-MZ-DYR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wL6-1a-SQO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="4OK-1y-Lei"/>
+                    <tabBarItem key="tabBarItem" title="يسوع بيقولك" image="JesusSays" id="4OK-1y-Lei"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ka7-pO-BSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,7 +97,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZR-UV-oXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2616" y="-895"/>
+            <point key="canvasLocation" x="2688" y="-346"/>
         </scene>
         <!--Chapters Table View Controller-->
         <scene sceneID="Pmb-7X-s1C">
@@ -136,7 +150,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IkK-FW-Q3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3442.0289855072465" y="-895.3125"/>
+            <point key="canvasLocation" x="3514" y="-346"/>
         </scene>
         <!--الكتاب المقدس-->
         <scene sceneID="AXG-x1-ISG">
@@ -216,5 +230,6 @@
     </scenes>
     <resources>
         <image name="BibleIcon" width="30" height="30"/>
+        <image name="JesusSays" width="25" height="25"/>
     </resources>
 </document>

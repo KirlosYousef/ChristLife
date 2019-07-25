@@ -10,7 +10,7 @@ import UIKit
 import dbt_sdk
 
 protocol isAbleToReceiveData{
-    func pass(book: String, chapter: Int)
+    func pass(volume: String, book: String, chapter: Int)
 }
 
 class BibleViewController: UIViewController, isAbleToReceiveData{
@@ -22,6 +22,7 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     var currentBookID: String = "Gen"
     var currentBookName: String = ""
     var currentChapter: Int = 1
+    var currentVolume: String = "ARZVDVO1ET"
     
     
     override func viewDidLoad() {
@@ -33,9 +34,10 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
         getVerses(book: self.currentBookID, Chapter: NSNumber(value: self.currentChapter))
     }
     
-    func pass(book: String, chapter: Int) {
+    func pass(volume: String, book: String, chapter: Int) {
         self.currentBookID = book
         self.currentChapter = chapter
+        self.currentVolume = volume
     }
     
     
@@ -62,7 +64,9 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     
     
     func getVerses(book: String, Chapter: NSNumber) {
-        DBT.getTextVerse(withDamId: "ARBWTCO1ET", book: book, chapter: Chapter, verseStart: nil, verseEnd: nil, success: { (verse) in
+        if !currentVolume.contains("1ET"){
+            currentVolume = currentVolume+"1ET"}
+        DBT.getTextVerse(withDamId: currentVolume, book: book, chapter: Chapter, verseStart: nil, verseEnd: nil, success: { (verse) in
             if let verse = verse {
                 self.verses = verse as! [DBTVerse]
                 self.data(verses: self.verses)
@@ -78,6 +82,7 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
         if segue.identifier == "bibleToBooksSegue"{
             let BooksVC = segue.destination as! BooksTableViewController
             BooksVC.delegate = self
+            BooksVC.currentVolume = currentVolume
         }
     }
 }

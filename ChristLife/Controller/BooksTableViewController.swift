@@ -13,7 +13,8 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
     
     @IBOutlet weak var searchBar: UISearchBar!
     var books: [DBTBook] = []
-    var selectedBook: String = "Josh"
+    var currentVolume: String = ""
+    var selectedBook: String = "Gen"
     var selectedChapter: String = "1"
     var delegate: isAbleToReceiveData?
     var filteredBooks: [DBTBook] = []
@@ -25,7 +26,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
         searchBar.resignFirstResponder()
         if let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton{
             cancelButton.isEnabled = true}
-    
+        
         getBooks()
         self.tableView.rowHeight = 50
         // Uncomment the following line to preserve selection between presentations
@@ -61,6 +62,8 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
             let chaptersTableView = segue.destination as! ChaptersTableViewController
             chaptersTableView.currentBook = self.selectedBook
             chaptersTableView.delegate = self.delegate
+            chaptersTableView.currentVolume = currentVolume
+            chaptersTableView.selectedVolume = filteredBooks[0].damId
         }
     }
     
@@ -71,7 +74,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
     
     // Getting the Bible books
     func getBooks() {
-        DBT.getLibraryBook(withDamId: "ARBWTCO1ET", success: { (books) in
+        DBT.getLibraryBook(withDamId: currentVolume, success: { (books) in
             if let books = books {
                 self.books = books as! [DBTBook]
                 self.filteredBooks = self.books
