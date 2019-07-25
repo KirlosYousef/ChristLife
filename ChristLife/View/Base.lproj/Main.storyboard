@@ -13,9 +13,9 @@
         <!--View Controller-->
         <scene sceneID="4Yz-Mb-tIc">
             <objects>
-                <viewController id="IOV-x0-WXg" sceneMemberID="viewController">
+                <viewController id="IOV-x0-WXg" customClass="ViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9mG-Ut-842">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wL6-1a-SQO"/>
@@ -34,15 +34,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="sFW-cX-r42">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" id="eBR-tU-ca2" customClass="BookTableViewCell" customModule="ChristLife" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBR-tU-ca2" id="TCa-4o-Zmw">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsa-mg-Xpd">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsa-mg-Xpd">
                                             <rect key="frame" x="20" y="11" width="374" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -67,9 +72,10 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="الغاء" id="L9D-S4-61k"/>
+                        <barButtonItem systemItem="cancel" id="L9D-S4-61k"/>
+                        <barButtonItem systemItem="done" id="77Q-hd-6qb"/>
+                        <barButtonItem systemItem="cancel" id="W6D-O7-ieb"/>
                     </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="6Wf-pf-1ml" kind="show" identifier="bookToChapterSegue" id="MM0-ZD-CYI"/>
                     </connections>
@@ -94,18 +100,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2v-9G-bM3">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2v-9G-bM3">
+                                            <rect key="frame" x="10" y="10" width="394" height="23.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="L2v-9G-bM3" secondAttribute="bottom" id="IyW-B3-NyW"/>
-                                        <constraint firstItem="L2v-9G-bM3" firstAttribute="top" secondItem="hSo-Nu-Rl7" secondAttribute="top" id="QIY-3i-CEj"/>
-                                        <constraint firstItem="L2v-9G-bM3" firstAttribute="leading" secondItem="hSo-Nu-Rl7" secondAttribute="leading" id="UfP-un-i5G"/>
-                                        <constraint firstAttribute="trailing" secondItem="L2v-9G-bM3" secondAttribute="trailing" id="Vh3-GR-jI5"/>
+                                        <constraint firstAttribute="bottom" secondItem="L2v-9G-bM3" secondAttribute="bottom" constant="10" id="EMI-Fo-HJx"/>
+                                        <constraint firstItem="L2v-9G-bM3" firstAttribute="leading" secondItem="hSo-Nu-Rl7" secondAttribute="leading" constant="10" id="aD0-7V-R3W"/>
+                                        <constraint firstAttribute="trailing" secondItem="L2v-9G-bM3" secondAttribute="trailing" constant="10" id="gnG-uF-EBv"/>
+                                        <constraint firstItem="L2v-9G-bM3" firstAttribute="top" secondItem="hSo-Nu-Rl7" secondAttribute="top" constant="10" id="yNC-dD-a4K"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -121,14 +127,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IkK-FW-Q3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3443" y="-895"/>
+            <point key="canvasLocation" x="3442.0289855072465" y="-895.3125"/>
         </scene>
-        <!--Bible-->
+        <!--الكتاب المقدس-->
         <scene sceneID="AXG-x1-ISG">
             <objects>
                 <viewController id="7je-88-nPT" customClass="BibleViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6R3-Lq-nqY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWv-KT-zR1">
@@ -136,16 +142,14 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="الكتاب المقدس" id="f9L-la-BfX">
-                                        <barButtonItem key="leftBarButtonItem" id="A3a-JV-X5U">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Ib-vE-fZD">
-                                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                        <barButtonItem key="rightBarButtonItem" id="A3a-JV-X5U" customClass="bibleToBooksSegue">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Ib-vE-fZD">
+                                                <rect key="frame" x="302" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="الاَناجيل"/>
                                                 <connections>
-                                                    <segue destination="0iF-x2-UYf" kind="popoverPresentation" identifier="bibleToBooksSegue" popoverAnchorView="1Ib-vE-fZD" id="q0n-Od-hQS">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
+                                                    <segue destination="0iF-x2-UYf" kind="show" identifier="bibleToBooksSegue" id="iKB-5d-qnV"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -171,7 +175,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5WQ-Rn-MT1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Bible" image="BibleIcon" id="j1b-Gg-ui3"/>
+                    <tabBarItem key="tabBarItem" title="الكتاب المقدس" image="BibleIcon" id="j1b-Gg-ui3"/>
                     <connections>
                         <outlet property="biblePageTitle" destination="f9L-la-BfX" id="X5D-vx-v8G"/>
                         <outlet property="versesTextView" destination="U59-Qq-YaL" id="Y0f-Cq-fwE"/>
@@ -185,7 +189,8 @@
         <scene sceneID="uYJ-Lb-q3Z">
             <objects>
                 <tabBarController id="NOn-7N-Bdd" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TBb-Al-3rr">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="TBb-Al-3rr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

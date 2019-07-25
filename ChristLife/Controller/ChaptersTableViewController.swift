@@ -14,7 +14,6 @@ class ChaptersTableViewController: UITableViewController {
     
     
     var currentBook: String = ""
-    //    var currentChapter: Int = 1
     var chapters: [DBTChapter] = []
     var bibleVC = BibleViewController()
     var delegate: isAbleToReceiveData?

@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		BC5169CF22E5FEA00029C516 /* BibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5169CE22E5FEA00029C516 /* BibleViewController.swift */; };
 		BC5169D222E605C70029C516 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5169D122E605C70029C516 /* BookTableViewCell.swift */; };
-		BC5169D422E6060E0029C516 /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5169D322E6060E0029C516 /* BooksTableViewController.swift */; };
 		BC5169D622E606B50029C516 /* BibleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5169D522E606B50029C516 /* BibleData.swift */; };
 		BC57A4B022E4B301000642B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57A4AF22E4B301000642B7 /* AppDelegate.swift */; };
 		BC57A4B222E4B301000642B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57A4B122E4B301000642B7 /* ViewController.swift */; };
 		BC57A4B522E4B301000642B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC57A4B322E4B301000642B7 /* Main.storyboard */; };
 		BC57A4B722E4B302000642B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC57A4B622E4B302000642B7 /* Assets.xcassets */; };
 		BC57A4BA22E4B302000642B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC57A4B822E4B302000642B7 /* LaunchScreen.storyboard */; };
+		BC82A4A122EA129200EBE51E /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82A4A022EA129200EBE51E /* BooksTableViewController.swift */; };
 		BCEB003822E66B7500395ADA /* ChaptersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEB003722E66B7500395ADA /* ChaptersTableViewController.swift */; };
 		BCEB003A22E66BD600395ADA /* ChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEB003922E66BD600395ADA /* ChapterTableViewCell.swift */; };
 		C329BDC8FD6C0E3024C78A42 /* Pods_ChristLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155A2ED94561D1E42B328BF2 /* Pods_ChristLife.framework */; };
@@ -26,7 +26,6 @@
 		611D27C253C52EEB8485918D /* Pods-ChristLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChristLife.debug.xcconfig"; path = "Target Support Files/Pods-ChristLife/Pods-ChristLife.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5169CE22E5FEA00029C516 /* BibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleViewController.swift; sourceTree = "<group>"; };
 		BC5169D122E605C70029C516 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
-		BC5169D322E6060E0029C516 /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
 		BC5169D522E606B50029C516 /* BibleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleData.swift; sourceTree = "<group>"; };
 		BC57A4AC22E4B301000642B7 /* ChristLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC57A4AF22E4B301000642B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +34,7 @@
 		BC57A4B622E4B302000642B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC57A4B922E4B302000642B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC57A4BB22E4B302000642B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC82A4A022EA129200EBE51E /* BooksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
 		BCEB003722E66B7500395ADA /* ChaptersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersTableViewController.swift; sourceTree = "<group>"; };
 		BCEB003922E66BD600395ADA /* ChapterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTableViewCell.swift; sourceTree = "<group>"; };
 		E419B43678B20206EB8C620C /* Pods-ChristLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChristLife.release.xcconfig"; path = "Target Support Files/Pods-ChristLife/Pods-ChristLife.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			children = (
 				BC57A4B122E4B301000642B7 /* ViewController.swift */,
 				BC5169CE22E5FEA00029C516 /* BibleViewController.swift */,
-				BC5169D322E6060E0029C516 /* BooksTableViewController.swift */,
+				BC82A4A022EA129200EBE51E /* BooksTableViewController.swift */,
 				BCEB003722E66B7500395ADA /* ChaptersTableViewController.swift */,
 			);
 			path = Controller;
@@ -255,12 +255,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC5169D222E605C70029C516 /* BookTableViewCell.swift in Sources */,
-				BC5169D422E6060E0029C516 /* BooksTableViewController.swift in Sources */,
 				BC5169D622E606B50029C516 /* BibleData.swift in Sources */,
 				BCEB003822E66B7500395ADA /* ChaptersTableViewController.swift in Sources */,
 				BC57A4B222E4B301000642B7 /* ViewController.swift in Sources */,
 				BCEB003A22E66BD600395ADA /* ChapterTableViewCell.swift in Sources */,
 				BC57A4B022E4B301000642B7 /* AppDelegate.swift in Sources */,
+				BC82A4A122EA129200EBE51E /* BooksTableViewController.swift in Sources */,
 				BC5169CF22E5FEA00029C516 /* BibleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

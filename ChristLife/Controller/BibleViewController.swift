@@ -23,17 +23,15 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     var currentBookName: String = ""
     var currentChapter: Int = 1
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "bibleToBooksSegue"{
-            let BooksVC = segue.destination as! BooksTableViewController
-            BooksVC.delegate = self
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getVerses(book: self.currentBookID, Chapter: NSNumber(value: self.currentChapter))
+    }
     
     func pass(book: String, chapter: Int) {
         self.currentBookID = book
@@ -53,17 +51,12 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
         updateData(text: text)
     }
     
+    
     func updateData(text: String){
         if let textView = self.versesTextView {
             textView.text = text
             self.biblePageTitle.title = "\(currentBookName) \(currentChapter)"
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        getVerses(book: self.currentBookID, Chapter: NSNumber(value: self.currentChapter))
     }
     
     
@@ -81,4 +74,10 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "bibleToBooksSegue"{
+            let BooksVC = segue.destination as! BooksTableViewController
+            BooksVC.delegate = self
+        }
+    }
 }
