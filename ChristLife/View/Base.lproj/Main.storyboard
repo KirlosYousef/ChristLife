@@ -39,15 +39,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="P9O-FQ-wg3">
                                         <rect key="frame" x="0.0" y="649" width="354" height="70"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPP-MT-1ND">
-                                                <rect key="frame" x="0.0" y="0.0" width="177" height="70"/>
-                                                <state key="normal" title="ايه جديده"/>
-                                                <connections>
-                                                    <action selector="newVerseButton:" destination="IOV-x0-WXg" eventType="touchUpInside" id="cyx-Qa-8QC"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xc-LI-FAk">
-                                                <rect key="frame" x="177" y="0.0" width="177" height="70"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="70"/>
                                                 <state key="normal" title="نشر"/>
                                                 <connections>
                                                     <action selector="shareButton:" destination="IOV-x0-WXg" eventType="touchUpInside" id="kLm-iC-EC5"/>
@@ -219,21 +212,21 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="جار التحميل..." textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="U59-Qq-YaL">
-                                <rect key="frame" x="0.0" y="77" width="414" height="736"/>
+                                <rect key="frame" x="10" y="78" width="394" height="735"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KWv-KT-zR1" firstAttribute="leading" secondItem="5WQ-Rn-MT1" secondAttribute="leading" id="Lno-0W-lcC"/>
                             <constraint firstItem="KWv-KT-zR1" firstAttribute="trailing" secondItem="5WQ-Rn-MT1" secondAttribute="trailing" id="URr-x7-Dav"/>
-                            <constraint firstItem="U59-Qq-YaL" firstAttribute="top" secondItem="KWv-KT-zR1" secondAttribute="bottom" id="YKm-JP-Dpw"/>
+                            <constraint firstItem="U59-Qq-YaL" firstAttribute="top" secondItem="KWv-KT-zR1" secondAttribute="bottom" constant="1" id="YKm-JP-Dpw"/>
                             <constraint firstItem="KWv-KT-zR1" firstAttribute="top" secondItem="6R3-Lq-nqY" secondAttribute="top" constant="33" id="Z1Y-Lr-zju"/>
-                            <constraint firstItem="U59-Qq-YaL" firstAttribute="leading" secondItem="5WQ-Rn-MT1" secondAttribute="leading" id="eEi-tQ-lif"/>
+                            <constraint firstItem="U59-Qq-YaL" firstAttribute="leading" secondItem="5WQ-Rn-MT1" secondAttribute="leading" constant="10" id="eEi-tQ-lif"/>
                             <constraint firstItem="U59-Qq-YaL" firstAttribute="bottom" secondItem="5WQ-Rn-MT1" secondAttribute="bottom" id="sbM-Vo-wuF"/>
-                            <constraint firstItem="U59-Qq-YaL" firstAttribute="trailing" secondItem="5WQ-Rn-MT1" secondAttribute="trailing" id="uQv-aq-1Ui"/>
+                            <constraint firstItem="U59-Qq-YaL" firstAttribute="trailing" secondItem="5WQ-Rn-MT1" secondAttribute="trailing" constant="-10" id="uQv-aq-1Ui"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5WQ-Rn-MT1"/>
                     </view>
@@ -247,11 +240,10 @@
             </objects>
             <point key="canvasLocation" x="1837.68115942029" y="-346.20535714285711"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Christ Life Tab Bar Controller-->
         <scene sceneID="uYJ-Lb-q3Z">
             <objects>
-                <tabBarController id="NOn-7N-Bdd" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
+                <tabBarController id="NOn-7N-Bdd" customClass="ChristLifeTabBarController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="TBb-Al-3rr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

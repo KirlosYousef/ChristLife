@@ -22,11 +22,14 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     var currentBookID: String = "Gen"
     var currentBookName: String = ""
     var currentChapter: Int = 1
-    var currentVolume: String = "ARZVDVO1ET"
+    var volumes: [String] = ["ARZVDVO1ET","ARZVDVN1ET"]
+    var currentVolume: String = ""
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.currentVolume = volumes[0]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,8 +67,6 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     
     
     func getVerses(book: String, Chapter: NSNumber) {
-        if !currentVolume.contains("1ET"){
-            currentVolume = currentVolume+"1ET"}
         DBT.getTextVerse(withDamId: currentVolume, book: book, chapter: Chapter, verseStart: nil, verseEnd: nil, success: { (verse) in
             if let verse = verse {
                 self.verses = verse as! [DBTVerse]
@@ -80,9 +81,10 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "bibleToBooksSegue"{
-            let BooksVC = segue.destination as! BooksTableViewController
-            BooksVC.delegate = self
-            BooksVC.currentVolume = currentVolume
+            let booksVC = segue.destination as! BooksTableViewController
+            booksVC.delegate = self
+            booksVC.currentVolume = currentVolume
+            booksVC.volumes = volumes
         }
     }
 }

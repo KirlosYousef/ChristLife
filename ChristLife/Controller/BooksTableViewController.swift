@@ -13,6 +13,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
     
     @IBOutlet weak var searchBar: UISearchBar!
     var books: [DBTBook] = []
+    var volumes = [String]()
     var currentVolume: String = ""
     var selectedBook: String = "Gen"
     var selectedChapter: String = "1"
@@ -24,8 +25,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
         searchBar.delegate = self
         //Setting the cancel button of the search bar always active
         searchBar.resignFirstResponder()
-        if let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton{
-            cancelButton.isEnabled = true}
+        if let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton{cancelButton.isEnabled = true}
         
         getBooks()
         self.tableView.rowHeight = 50
@@ -63,26 +63,31 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
             chaptersTableView.currentBook = self.selectedBook
             chaptersTableView.delegate = self.delegate
             chaptersTableView.currentVolume = currentVolume
-            chaptersTableView.selectedVolume = filteredBooks[0].damId
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedBook = filteredBooks[indexPath.row].bookId
+        currentVolume = filteredBooks[indexPath.row].damId
         performSegue(withIdentifier: "bookToChapterSegue", sender: nil)
     }
     
     // Getting the Bible books
     func getBooks() {
-        DBT.getLibraryBook(withDamId: currentVolume, success: { (books) in
+        self.books.removeAll()
+        for i in 0...1 {
+        DBT.getLibraryBook(withDamId: volumes[i], success: { (books) in
             if let books = books {
-                self.books = books as! [DBTBook]
+                for book in books{
+                    self.books.append(book as! DBTBook)
+                }
                 self.filteredBooks = self.books
                 self.tableView.reloadData()
             }
         }) { (error) in
             if let error = error {
                 print("Error: \(error)")
+            }
             }
         }
     }

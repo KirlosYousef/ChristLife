@@ -20,7 +20,7 @@ class ChaptersTableViewController: UITableViewController, UISearchBarDelegate {
     var delegate: isAbleToReceiveData?
     var filteredChapters: [DBTChapter] = []
     var currentVolume: String = ""
-    var selectedVolume: String = ""
+//    var selectedVolume: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +82,7 @@ class ChaptersTableViewController: UITableViewController, UISearchBarDelegate {
     
     func doDismiss(book: String, chapter: Int) {
         if let delegate = self.delegate{
-            delegate.pass(volume: selectedVolume,book: book, chapter: chapter)
+            delegate.pass(volume: currentVolume,book: book, chapter: chapter)
         }
         // Use presentingViewController twice to go back two levels and call
         // dismissViewController to dismiss both viewControllers.
