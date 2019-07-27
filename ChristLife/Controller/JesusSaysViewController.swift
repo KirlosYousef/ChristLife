@@ -17,11 +17,13 @@ class JesusSaysViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
         getVerseOfToday { (verse) in
-            
             self.verse.text = "جار التحميل..."
-     
             self.verse.text = verse
         }
     }
@@ -37,7 +39,7 @@ class JesusSaysViewController: UIViewController {
         DBT.getTextVerse(withDamId: verseOfToday.damID + "1ET", book: verseOfToday.bookID, chapter: verseOfToday.chapterID as NSNumber, verseStart: verseOfToday.verseID as NSNumber, verseEnd: nil, success: { (verse) in
             if let verse = verse as? [DBTVerse]{
                 let currentVerse = verse[0]
-                let fullVerse = currentVerse.verseText! +  "(\(currentVerse.bookName!)\(currentVerse.chapterId!):\(currentVerse.verseId!))"
+                let fullVerse = currentVerse.verseText! +  "(\(currentVerse.bookName!)\(currentVerse.verseId!):\(currentVerse.chapterId!))"
                 completion(fullVerse)
             }
         }) { (error) in
