@@ -34,7 +34,13 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        getVerses(book: self.currentBookID, Chapter: NSNumber(value: self.currentChapter))
+        getVerses(book: self.currentBookID, Chapter: NSNumber(value: self.currentChapter), completion: {(verses) in
+            if let verses = verses{
+                self.data(verses: verses as! [DBTVerse])}
+        
+        else {
+            self.versesTextView.text = "مشكلة فى الاتصال بالانترنت."
+            }})
     }
     
     func pass(volume: String, book: String, chapter: Int) {
@@ -66,16 +72,15 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     
     
     
-    func getVerses(book: String, Chapter: NSNumber) {
-        DBT.getTextVerse(withDamId: currentVolume, book: book, chapter: Chapter, verseStart: nil, verseEnd: nil, success: { (verse) in
-            if let verse = verse {
-                self.verses = verse as! [DBTVerse]
-                self.data(verses: self.verses)
+    func getVerses(book: String, Chapter: NSNumber, completion: @escaping ([Any]?)->()) {
+        DBT.getTextVerse(withDamId: currentVolume, book: book, chapter: Chapter, verseStart: nil, verseEnd: nil, success: { (verses) in
+            if let verses = verses {
+                self.verses = verses as! [DBTVerse]
+                completion(verses)
+                
             }
         }) { (error) in
-            if let error = error {
-                print("Error \(error)")
-            }
+                completion(nil)
         }
     }
     

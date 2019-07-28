@@ -41,7 +41,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xc-LI-FAk">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="70"/>
-                                                <state key="normal" title="نشر"/>
+                                                <state key="normal" title="ابعتها لأصحابك"/>
                                                 <connections>
                                                     <action selector="shareButton:" destination="IOV-x0-WXg" eventType="touchUpInside" id="kLm-iC-EC5"/>
                                                 </connections>

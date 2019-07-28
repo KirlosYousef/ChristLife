@@ -23,8 +23,12 @@ class JesusSaysViewController: UIViewController {
         super.viewWillAppear(true)
         
         getVerseOfToday { (verse) in
+            if let verse = verse {
             self.verse.text = "جار التحميل..."
             self.verse.text = verse
+            } else {
+                self.verse.text = "مشكلة فى الاتصال بالانترنت."
+            }
         }
     }
     
@@ -43,9 +47,7 @@ class JesusSaysViewController: UIViewController {
                 completion(fullVerse)
             }
         }) { (error) in
-            if let error = error{
-                print(error)
-            }
+                completion(nil)
         }
     }
     

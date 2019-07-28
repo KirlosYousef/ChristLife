@@ -49,7 +49,7 @@ class ChristLifeTabBarController: UITabBarController {
                 content.body = verse
                 content.sound = .default
                 var date = DateComponents()
-                date.hour = 00
+                date.hour = 08
                 date.minute = 00
                 
                 let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
