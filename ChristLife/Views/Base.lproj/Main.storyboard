@@ -21,7 +21,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u4C-1k-hHo">
                                 <rect key="frame" x="0.0" y="94" width="375" height="635"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      يسوع انهارده بيقولك: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvi-ah-47C">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      يسوع بيقولك النهارده : " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvi-ah-47C">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="nA3-hP-1SD"/>
@@ -40,12 +40,12 @@
                                                 <rect key="frame" x="10" y="0.0" width="355" height="505"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VerseLogo" translatesAutoresizingMaskIntoConstraints="NO" id="kfi-qH-MWz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="110.00000000000006" height="505.00000000000006"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="505"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="110" id="vEn-PH-NTc"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="جار التحميل..." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-9Q-KUT">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-9Q-KUT">
                                                         <rect key="frame" x="110" y="0.0" width="245" height="505"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -100,6 +100,10 @@
                                     <constraint firstAttribute="bottom" secondItem="Xjn-zY-k7f" secondAttribute="bottom" constant="70" id="oeb-Iw-h2s"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Rmc-6p-Xvv">
+                                <rect key="frame" x="177" y="396" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -112,6 +116,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="يسوع بيقولك" image="JesusSays" id="4OK-1y-Lei"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Rmc-6p-Xvv" id="4ZD-WA-AF4"/>
                         <outlet property="verse" destination="mpc-9Q-KUT" id="dEE-ri-EDH"/>
                     </connections>
                 </viewController>
@@ -252,7 +257,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="الكتاب المقدس" id="f9L-la-BfX">
-                                        <barButtonItem key="rightBarButtonItem" id="A3a-JV-X5U" customClass="bibleToBooksSegue">
+                                        <barButtonItem key="rightBarButtonItem" id="A3a-JV-X5U">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Ib-vE-fZD">
                                                 <rect key="frame" x="267" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -269,16 +274,21 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="جار التحميل..." textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="U59-Qq-YaL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="U59-Qq-YaL">
                                 <rect key="frame" x="10" y="78" width="355" height="651"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dID-nL-GD6">
+                                <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dID-nL-GD6" firstAttribute="centerY" secondItem="6R3-Lq-nqY" secondAttribute="centerY" id="67e-Vc-emH"/>
                             <constraint firstItem="KWv-KT-zR1" firstAttribute="leading" secondItem="5WQ-Rn-MT1" secondAttribute="leading" id="Lno-0W-lcC"/>
+                            <constraint firstItem="dID-nL-GD6" firstAttribute="centerX" secondItem="6R3-Lq-nqY" secondAttribute="centerX" id="Q6S-sn-L2G"/>
                             <constraint firstItem="KWv-KT-zR1" firstAttribute="trailing" secondItem="5WQ-Rn-MT1" secondAttribute="trailing" id="URr-x7-Dav"/>
                             <constraint firstItem="U59-Qq-YaL" firstAttribute="top" secondItem="KWv-KT-zR1" secondAttribute="bottom" constant="1" id="YKm-JP-Dpw"/>
                             <constraint firstItem="KWv-KT-zR1" firstAttribute="top" secondItem="6R3-Lq-nqY" secondAttribute="top" constant="33" id="Z1Y-Lr-zju"/>
@@ -290,6 +300,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="الكتاب المقدس" image="BibleIcon" id="j1b-Gg-ui3"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="dID-nL-GD6" id="LHc-oO-gYi"/>
                         <outlet property="biblePageTitle" destination="f9L-la-BfX" id="X5D-vx-v8G"/>
                         <outlet property="versesTextView" destination="U59-Qq-YaL" id="Y0f-Cq-fwE"/>
                     </connections>

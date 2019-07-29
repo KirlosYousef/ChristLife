@@ -15,6 +15,7 @@ protocol isAbleToReceiveData{
 
 class BibleViewController: UIViewController, isAbleToReceiveData{
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var biblePageTitle: UINavigationItem!
     @IBOutlet weak var versesTextView: UITextView!
     var verses: [DBTVerse] = []
@@ -25,19 +26,23 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     var volumes: [String] = ["ARZVDVO1ET","ARZVDVN1ET"]
     var currentVolume: String = ""
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentVolume = volumes[0]
+        
+                // ActivityIndicator
+                self.activityIndicator.hidesWhenStopped = true
+                view.addSubview(self.activityIndicator)
+                self.activityIndicator.startAnimating()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         getVerses(book: self.currentBookID, Chapter: NSNumber(value: self.currentChapter), completion: {(verses) in
+            self.activityIndicator.stopAnimating()
             if let verses = verses{
                 self.data(verses: verses as! [DBTVerse])}
-                
             else {
                 self.versesTextView.text = "مشكلة فى الاتصال بالانترنت."
             }})

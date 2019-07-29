@@ -11,21 +11,25 @@ import dbt_sdk
 
 class JesusSaysViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var verse: UILabel!
     let dailyVerses = DailyVerses()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                // ActivityIndicator
+                self.activityIndicator.hidesWhenStopped = true
+                view.addSubview(self.activityIndicator)
+                self.activityIndicator.startAnimating()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         getVerseOfToday { (verse) in
+            self.activityIndicator.stopAnimating()
             if let verse = verse {
-                self.verse.text = "جار التحميل..."
                 self.verse.text = verse
             } else {
                 self.verse.text = "مشكلة فى الاتصال بالانترنت."
