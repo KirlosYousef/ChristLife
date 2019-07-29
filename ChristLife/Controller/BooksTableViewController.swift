@@ -20,6 +20,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
     var delegate: isAbleToReceiveData?
     var filteredBooks: [DBTBook] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -33,7 +34,6 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
         self.clearsSelectionOnViewWillAppear = false
         self.tableView.reloadData()
     }
-    
     
     
     // MARK: - Table view data source
@@ -57,40 +57,34 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "bookToChapterSegue"{
-            let chaptersTableView = segue.destination as! ChaptersTableViewController
-            chaptersTableView.currentBook = self.selectedBook
-            chaptersTableView.delegate = self.delegate
-            chaptersTableView.currentVolume = currentVolume
-        }
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedBook = filteredBooks[indexPath.row].bookId
         currentVolume = filteredBooks[indexPath.row].damId
         performSegue(withIdentifier: "bookToChapterSegue", sender: nil)
     }
     
+    
     // Getting the Bible books
     func getBooks() {
         self.books.removeAll()
         for i in 0...1 {
-        DBT.getLibraryBook(withDamId: volumes[i], success: { (books) in
-            if let books = books {
-                for book in books{
-                    self.books.append(book as! DBTBook)
+            DBT.getLibraryBook(withDamId: volumes[i], success: { (books) in
+                if let books = books {
+                    for book in books{
+                        self.books.append(book as! DBTBook)
+                    }
+                    self.filteredBooks = self.books
+                    self.tableView.reloadData()
                 }
-                self.filteredBooks = self.books
-                self.tableView.reloadData()
-            }
-        }) { (error) in
-            if let error = error {
-                print("Error: \(error)")
-            }
+            }) { (error) in
+                if let error = error {
+                    print("Error: \(error)")
+                }
             }
         }
     }
+    
+    
     // This method updates filteredData based on the text in the Search Box
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // When there is no text, filteredData is the same as the original data
@@ -102,57 +96,21 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
             // If dataItem matches the searchText, return true to include it
             return item.bookName.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
-        
         tableView.reloadData()
     }
+    
+         // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "bookToChapterSegue"{
+            let chaptersTableView = segue.destination as! ChaptersTableViewController
+            chaptersTableView.currentBook = self.selectedBook
+            chaptersTableView.delegate = self.delegate
+            chaptersTableView.currentVolume = currentVolume
+        }
+    }
+    
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

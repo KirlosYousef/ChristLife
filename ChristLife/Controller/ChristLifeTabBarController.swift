@@ -13,8 +13,6 @@ class ChristLifeTabBarController: UITabBarController {
     
     let jesusSaysVC = JesusSaysViewController()
     
-    let jesusSays = JesusSaysViewController()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,18 +40,17 @@ class ChristLifeTabBarController: UITabBarController {
             }
         }
         
-        jesusSays.getVerseOfToday { (verse) in
+        jesusSaysVC.getVerseOfToday { (verse) in
             if let verse = verse {
                 let content = UNMutableNotificationContent()
                 content.title = "يسوع انهاردة بيقولك 🙏"
                 content.body = verse
                 content.sound = .default
                 var date = DateComponents()
-                date.hour = 08
-                date.minute = 00
+                date.hour = 00
+                date.minute = 01
                 
                 let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
-//                let uuidString = UUID().uuidString
                 let request = UNNotificationRequest(identifier: "JesusSaysNotification", content: content, trigger: trigger)
                 
                 center.add(request) { (error) in

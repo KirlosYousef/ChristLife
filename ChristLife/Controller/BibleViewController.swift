@@ -26,22 +26,23 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     var currentVolume: String = ""
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentVolume = volumes[0]
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         getVerses(book: self.currentBookID, Chapter: NSNumber(value: self.currentChapter), completion: {(verses) in
             if let verses = verses{
                 self.data(verses: verses as! [DBTVerse])}
-        
-        else {
-            self.versesTextView.text = "مشكلة فى الاتصال بالانترنت."
+                
+            else {
+                self.versesTextView.text = "مشكلة فى الاتصال بالانترنت."
             }})
     }
+    
     
     func pass(volume: String, book: String, chapter: Int) {
         self.currentBookID = book
@@ -71,7 +72,6 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     }
     
     
-    
     func getVerses(book: String, Chapter: NSNumber, completion: @escaping ([Any]?)->()) {
         DBT.getTextVerse(withDamId: currentVolume, book: book, chapter: Chapter, verseStart: nil, verseEnd: nil, success: { (verses) in
             if let verses = verses {
@@ -80,9 +80,10 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
                 
             }
         }) { (error) in
-                completion(nil)
+            completion(nil)
         }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "bibleToBooksSegue"{

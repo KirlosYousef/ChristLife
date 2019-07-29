@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC4247FD22EEE62500A6F10A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4247FC22EEE62500A6F10A /* Assets.xcassets */; };
 		BC5169CF22E5FEA00029C516 /* BibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5169CE22E5FEA00029C516 /* BibleViewController.swift */; };
 		BC5169D222E605C70029C516 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5169D122E605C70029C516 /* BookTableViewCell.swift */; };
 		BC57A4B022E4B301000642B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57A4AF22E4B301000642B7 /* AppDelegate.swift */; };
-		BC57A4B222E4B301000642B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57A4B122E4B301000642B7 /* ViewController.swift */; };
 		BC57A4B522E4B301000642B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC57A4B322E4B301000642B7 /* Main.storyboard */; };
-		BC57A4BA22E4B302000642B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC57A4B822E4B302000642B7 /* LaunchScreen.storyboard */; };
 		BC82A4A122EA129200EBE51E /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82A4A022EA129200EBE51E /* BooksTableViewController.swift */; };
-		BC82A4A322EA2A7700EBE51E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC82A4A222EA2A7700EBE51E /* Assets.xcassets */; };
 		BC82A4A522EA2B3900EBE51E /* JesusSaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82A4A422EA2B3900EBE51E /* JesusSaysViewController.swift */; };
 		BC82A4A722EA76E400EBE51E /* ChristLifeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82A4A622EA76E400EBE51E /* ChristLifeTabBarController.swift */; };
 		BC913F3822ECBF6D00EB2EE3 /* DailyVerses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC913F3722ECBF6D00EB2EE3 /* DailyVerses.swift */; };
@@ -27,16 +25,14 @@
 /* Begin PBXFileReference section */
 		155A2ED94561D1E42B328BF2 /* Pods_ChristLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChristLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		611D27C253C52EEB8485918D /* Pods-ChristLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChristLife.debug.xcconfig"; path = "Target Support Files/Pods-ChristLife/Pods-ChristLife.debug.xcconfig"; sourceTree = "<group>"; };
+		BC4247FC22EEE62500A6F10A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC5169CE22E5FEA00029C516 /* BibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleViewController.swift; sourceTree = "<group>"; };
 		BC5169D122E605C70029C516 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		BC57A4AC22E4B301000642B7 /* ChristLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChristLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC57A4AF22E4B301000642B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC57A4B122E4B301000642B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BC57A4B422E4B301000642B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BC57A4B922E4B302000642B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC57A4BB22E4B302000642B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC82A4A022EA129200EBE51E /* BooksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
-		BC82A4A222EA2A7700EBE51E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC82A4A422EA2B3900EBE51E /* JesusSaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JesusSaysViewController.swift; sourceTree = "<group>"; };
 		BC82A4A622EA76E400EBE51E /* ChristLifeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristLifeTabBarController.swift; sourceTree = "<group>"; };
 		BC913F3722ECBF6D00EB2EE3 /* DailyVerses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyVerses.swift; sourceTree = "<group>"; };
@@ -70,7 +66,6 @@
 		BC28250D22E4B6F80003F5D4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BC57A4B122E4B301000642B7 /* ViewController.swift */,
 				BC5169CE22E5FEA00029C516 /* BibleViewController.swift */,
 				BC82A4A022EA129200EBE51E /* BooksTableViewController.swift */,
 				BCEB003722E66B7500395ADA /* ChaptersTableViewController.swift */,
@@ -123,8 +118,7 @@
 			children = (
 				BC57A4AF22E4B301000642B7 /* AppDelegate.swift */,
 				BC57A4BB22E4B302000642B7 /* Info.plist */,
-				BC82A4A222EA2A7700EBE51E /* Assets.xcassets */,
-				BC57A4B822E4B302000642B7 /* LaunchScreen.storyboard */,
+				BC4247FC22EEE62500A6F10A /* Assets.xcassets */,
 				BC28250E22E4B8AD0003F5D4 /* View */,
 				BC28250D22E4B6F80003F5D4 /* Controller */,
 			);
@@ -199,9 +193,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4247FD22EEE62500A6F10A /* Assets.xcassets in Resources */,
 				BC913F3A22ECBFAC00EB2EE3 /* VersesFile.txt in Resources */,
-				BC82A4A322EA2A7700EBE51E /* Assets.xcassets in Resources */,
-				BC57A4BA22E4B302000642B7 /* LaunchScreen.storyboard in Resources */,
 				BC57A4B522E4B301000642B7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +262,6 @@
 				BC82A4A722EA76E400EBE51E /* ChristLifeTabBarController.swift in Sources */,
 				BC913F3822ECBF6D00EB2EE3 /* DailyVerses.swift in Sources */,
 				BCEB003822E66B7500395ADA /* ChaptersTableViewController.swift in Sources */,
-				BC57A4B222E4B301000642B7 /* ViewController.swift in Sources */,
 				BCEB003A22E66BD600395ADA /* ChapterTableViewCell.swift in Sources */,
 				BC57A4B022E4B301000642B7 /* AppDelegate.swift in Sources */,
 				BC82A4A122EA129200EBE51E /* BooksTableViewController.swift in Sources */,
@@ -286,14 +278,6 @@
 				BC57A4B422E4B301000642B7 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BC57A4B822E4B302000642B7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BC57A4B922E4B302000642B7 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -420,6 +404,7 @@
 			baseConfigurationReference = 611D27C253C52EEB8485918D /* Pods-ChristLife.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L3Y3NN5H2E;
 				INFOPLIST_FILE = ChristLife/Info.plist;
@@ -439,6 +424,7 @@
 			baseConfigurationReference = E419B43678B20206EB8C620C /* Pods-ChristLife.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L3Y3NN5H2E;
 				INFOPLIST_FILE = ChristLife/Info.plist;

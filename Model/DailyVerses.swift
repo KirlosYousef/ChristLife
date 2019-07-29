@@ -39,6 +39,7 @@ class DailyVerses {
                 
             } catch {
                 // contents could not be loaded
+                print("Contents could not be loaded")
             }
         } else {
             // txt file not found!

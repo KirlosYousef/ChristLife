@@ -12,25 +12,27 @@ import dbt_sdk
 class JesusSaysViewController: UIViewController {
     
     @IBOutlet weak var verse: UILabel!
-    
     let dailyVerses = DailyVerses()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         getVerseOfToday { (verse) in
             if let verse = verse {
-            self.verse.text = "جار التحميل..."
-            self.verse.text = verse
+                self.verse.text = "جار التحميل..."
+                self.verse.text = verse
             } else {
                 self.verse.text = "مشكلة فى الاتصال بالانترنت."
             }
         }
     }
+    
     
     func getVerseOfToday(completion: @escaping (String?)->()){
         // Check the current day number of the year
@@ -47,9 +49,10 @@ class JesusSaysViewController: UIViewController {
                 completion(fullVerse)
             }
         }) { (error) in
-                completion(nil)
+            completion(nil)
         }
     }
+    
     
     @IBAction func shareButton(_ sender: Any) {
         // verse to share

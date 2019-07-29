@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NOn-7N-Bdd">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,50 +15,97 @@
             <objects>
                 <viewController id="IOV-x0-WXg" customClass="JesusSaysViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9mG-Ut-842">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u4C-1k-hHo">
-                                <rect key="frame" x="30" y="94" width="354" height="719"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="635"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يسوع انهارده بيقولك: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvi-ah-47C">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      يسوع انهارده بيقولك: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvi-ah-47C">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="nA3-hP-1SD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="جار التحميل..." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-9Q-KUT">
-                                        <rect key="frame" x="0.0" y="60" width="354" height="589"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="P9O-FQ-wg3">
-                                        <rect key="frame" x="0.0" y="649" width="354" height="70"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xjn-zY-k7f">
+                                        <rect key="frame" x="0.0" y="60" width="375" height="505"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VerseBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Thb-Pd-0MM">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="505"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neV-hT-tBX">
+                                                <rect key="frame" x="10" y="0.0" width="355" height="505"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VerseLogo" translatesAutoresizingMaskIntoConstraints="NO" id="kfi-qH-MWz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="110.00000000000006" height="505.00000000000006"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="110" id="vEn-PH-NTc"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="جار التحميل..." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-9Q-KUT">
+                                                        <rect key="frame" x="110" y="0.0" width="245" height="505"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="neV-hT-tBX" secondAttribute="bottom" id="2fR-S2-bfR"/>
+                                            <constraint firstItem="Thb-Pd-0MM" firstAttribute="leading" secondItem="Xjn-zY-k7f" secondAttribute="leading" id="DOR-H5-ZsN"/>
+                                            <constraint firstItem="neV-hT-tBX" firstAttribute="leading" secondItem="Xjn-zY-k7f" secondAttribute="leading" constant="10" id="LPL-5B-CTx"/>
+                                            <constraint firstAttribute="trailing" secondItem="neV-hT-tBX" secondAttribute="trailing" constant="10" id="V8g-X5-vrQ"/>
+                                            <constraint firstItem="neV-hT-tBX" firstAttribute="top" secondItem="Xjn-zY-k7f" secondAttribute="top" id="WzB-Ta-Ho6"/>
+                                            <constraint firstAttribute="trailing" secondItem="Thb-Pd-0MM" secondAttribute="trailing" id="YKC-83-12x"/>
+                                            <constraint firstAttribute="bottom" secondItem="Thb-Pd-0MM" secondAttribute="bottom" id="fpd-n1-0nd"/>
+                                            <constraint firstItem="Thb-Pd-0MM" firstAttribute="top" secondItem="Xjn-zY-k7f" secondAttribute="top" id="gT9-Wb-NMX"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnT-Qf-ZIB">
+                                        <rect key="frame" x="0.0" y="565" width="375" height="70"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcN-Vl-465">
+                                                <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="70"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xc-LI-FAk">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="70"/>
-                                                <state key="normal" title="ابعتها لأصحابك"/>
+                                                <rect key="frame" x="92.666666666666686" y="0.0" width="190" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="190" id="qj8-9c-JNk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <state key="normal" title="ابعتها لأصحابك">
+                                                    <color key="titleColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="shareButton:" destination="IOV-x0-WXg" eventType="touchUpInside" id="kLm-iC-EC5"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D54-6f-YvS">
+                                                <rect key="frame" x="282.66666666666669" y="0.0" width="92.333333333333314" height="70"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="Uqq-Js-a2o"/>
+                                            <constraint firstItem="TcN-Vl-465" firstAttribute="width" secondItem="D54-6f-YvS" secondAttribute="width" id="DwS-ej-7aW"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Xjn-zY-k7f" secondAttribute="bottom" constant="70" id="oeb-Iw-h2s"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wL6-1a-SQO" firstAttribute="trailing" secondItem="u4C-1k-hHo" secondAttribute="trailing" constant="30" id="cBq-d3-1Ne"/>
+                            <constraint firstAttribute="trailing" secondItem="u4C-1k-hHo" secondAttribute="trailing" id="cBq-d3-1Ne"/>
                             <constraint firstItem="u4C-1k-hHo" firstAttribute="top" secondItem="wL6-1a-SQO" secondAttribute="top" constant="50" id="pzN-bu-AAN"/>
-                            <constraint firstItem="u4C-1k-hHo" firstAttribute="leading" secondItem="wL6-1a-SQO" secondAttribute="leading" constant="30" id="yL0-a6-imR"/>
+                            <constraint firstItem="u4C-1k-hHo" firstAttribute="leading" secondItem="9mG-Ut-842" secondAttribute="leading" id="yL0-a6-imR"/>
                             <constraint firstItem="wL6-1a-SQO" firstAttribute="bottom" secondItem="u4C-1k-hHo" secondAttribute="bottom" id="z1A-XV-GpZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wL6-1a-SQO"/>
@@ -70,33 +117,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ka7-pO-BSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837.68115942029" y="388.39285714285711"/>
+            <point key="canvasLocation" x="1837.5999999999999" y="387.93103448275866"/>
         </scene>
         <!--Books Table View Controller-->
         <scene sceneID="ozu-oE-nQP">
             <objects>
                 <tableViewController id="0iF-x2-UYf" customClass="BooksTableViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="91I-JM-zWA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" id="sFW-cX-r42">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textInputTraits key="textInputTraits" textContentType="name"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" id="eBR-tU-ca2" customClass="BookTableViewCell" customModule="ChristLife" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBR-tU-ca2" id="TCa-4o-Zmw">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsa-mg-Xpd">
-                                            <rect key="frame" x="20" y="11" width="374" height="22"/>
+                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -136,26 +185,29 @@
             <objects>
                 <tableViewController id="6Wf-pf-1ml" customClass="ChaptersTableViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="s3B-vY-HKu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.062745098040000002" green="0.64705882349999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" id="znM-I5-cFw">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="barTintColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chapterCell" id="Bqu-ec-RvJ" customClass="ChapterTableViewCell" customModule="ChristLife" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bqu-ec-RvJ" id="hSo-Nu-Rl7">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2v-9G-bM3">
-                                            <rect key="frame" x="10" y="10" width="394" height="23.5"/>
+                                            <rect key="frame" x="10" y="10.000000000000002" width="355" height="23.666666666666671"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -189,30 +241,36 @@
             <objects>
                 <viewController id="7je-88-nPT" customClass="BibleViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6R3-Lq-nqY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWv-KT-zR1">
-                                <rect key="frame" x="0.0" y="33" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="33" width="375" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="الكتاب المقدس" id="f9L-la-BfX">
                                         <barButtonItem key="rightBarButtonItem" id="A3a-JV-X5U" customClass="bibleToBooksSegue">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Ib-vE-fZD">
-                                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                                <rect key="frame" x="267" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                <state key="normal" title="الاَناجيل"/>
+                                                <state key="normal" title="الاَناجيل">
+                                                    <color key="titleColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="0iF-x2-UYf" kind="show" identifier="bibleToBooksSegue" id="iKB-5d-qnV"/>
                                                 </connections>
                                             </button>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="جار التحميل..." textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="U59-Qq-YaL">
-                                <rect key="frame" x="10" y="78" width="394" height="735"/>
+                                <rect key="frame" x="10" y="78" width="355" height="651"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -244,10 +302,13 @@
         <scene sceneID="uYJ-Lb-q3Z">
             <objects>
                 <tabBarController id="NOn-7N-Bdd" customClass="ChristLifeTabBarController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="TBb-Al-3rr">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="TBb-Al-3rr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="7je-88-nPT" kind="relationship" relationship="viewControllers" id="GKK-l2-rlF"/>
@@ -261,6 +322,8 @@
     </scenes>
     <resources>
         <image name="BibleIcon" width="30" height="30"/>
-        <image name="JesusSays" width="25" height="25"/>
+        <image name="JesusSays" width="30" height="30"/>
+        <image name="VerseBackground" width="1240" height="1754"/>
+        <image name="VerseLogo" width="197" height="196"/>
     </resources>
 </document>
