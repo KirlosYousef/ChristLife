@@ -4,11 +4,10 @@
 IOS application contains two parts (more will be added later).
 
 # First part: Bible.
-![Imgur Image](https://i.imgur.com/ao4c5ro.png?1)
-![Imgur Image](https://i.imgur.com/Y3Yo64N.png?1)
-![Imgur Image](https://i.imgur.com/cPts8K3.png?1)
+![Imgur Image](https://i.imgur.com/J3zPbQq.jpg)
 
-A full Arabic bible.
+
+- Full bible (Only Arabic bible for now, all languages will be supported later).
 - The possibility to choose the bible book and the chapter using tableviews.
 - A search bar in the tableviews.
 - The [DBT SDK](https://bitbucket.org/faithcomesbyhearing/dbt-sdk-ios/src/master/) used to receive the bible data.
