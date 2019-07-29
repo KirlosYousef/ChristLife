@@ -5,7 +5,8 @@ IOS application contains two parts (more will be added later).
 
 # First part: Bible.
 ![Imgur Image](https://i.imgur.com/ao4c5ro.png?1)
-![Imgur Image](https://i.imgur.com/G9c7Hmo.png?1)
+![Imgur Image](https://i.imgur.com/Y3Yo64N.png?1)
+![Imgur Image](https://i.imgur.com/cPts8K3.png?1)
 
 A full Arabic bible.
 - The possibility to choose the bible book and the chapter using tableviews.
