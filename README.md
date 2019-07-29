@@ -3,7 +3,7 @@
 
 IOS application contains two parts (more will be added later).
 
-# First part: Bible.
+# First part: Bible
 ![Imgur Image](https://i.imgur.com/J3zPbQq.jpg)
 
 
@@ -12,7 +12,7 @@ IOS application contains two parts (more will be added later).
 - A search bar in the tableviews.
 - The [DBT SDK](https://bitbucket.org/faithcomesbyhearing/dbt-sdk-ios/src/master/) used to receive the bible data.
 
-# Second part: Jesus says.
+# Second part: Jesus says
 ![Imgur Image](https://i.imgur.com/wep0beA.png?1)
 
 - New different verse everyday.
