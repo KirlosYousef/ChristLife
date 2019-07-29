@@ -63,42 +63,82 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		BC28250D22E4B6F80003F5D4 /* Controller */ = {
+		BC28250D22E4B6F80003F5D4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC42480222EF0F8900A6F10A /* Main */,
+				BC42480022EF0F6000A6F10A /* Bible */,
+				BC42480122EF0F6B00A6F10A /* JesusSays */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BC28250E22E4B8AD0003F5D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC57A4B322E4B301000642B7 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BC4247FE22EF0BC900A6F10A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BC4247FC22EEE62500A6F10A /* Assets.xcassets */,
+				BC913F3922ECBFAB00EB2EE3 /* VersesFile.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BC4247FF22EF0D1300A6F10A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC57A4AF22E4B301000642B7 /* AppDelegate.swift */,
+				BC57A4BB22E4B302000642B7 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC42480022EF0F6000A6F10A /* Bible */ = {
 			isa = PBXGroup;
 			children = (
 				BC5169CE22E5FEA00029C516 /* BibleViewController.swift */,
 				BC82A4A022EA129200EBE51E /* BooksTableViewController.swift */,
 				BCEB003722E66B7500395ADA /* ChaptersTableViewController.swift */,
+			);
+			path = Bible;
+			sourceTree = "<group>";
+		};
+		BC42480122EF0F6B00A6F10A /* JesusSays */ = {
+			isa = PBXGroup;
+			children = (
 				BC82A4A422EA2B3900EBE51E /* JesusSaysViewController.swift */,
+			);
+			path = JesusSays;
+			sourceTree = "<group>";
+		};
+		BC42480222EF0F8900A6F10A /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				BC82A4A622EA76E400EBE51E /* ChristLifeTabBarController.swift */,
 			);
-			path = Controller;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		BC28250E22E4B8AD0003F5D4 /* View */ = {
+		BC5169D022E6059D0029C516 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BC57A4B322E4B301000642B7 /* Main.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BC5169D022E6059D0029C516 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BC913F3922ECBFAB00EB2EE3 /* VersesFile.txt */,
 				BC5169D122E605C70029C516 /* BookTableViewCell.swift */,
 				BCEB003922E66BD600395ADA /* ChapterTableViewCell.swift */,
 				BC913F3722ECBF6D00EB2EE3 /* DailyVerses.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BC57A4A322E4B301000642B7 = {
 			isa = PBXGroup;
 			children = (
 				BC57A4AE22E4B301000642B7 /* ChristLife */,
-				BC5169D022E6059D0029C516 /* Model */,
 				BC57A4AD22E4B301000642B7 /* Products */,
 				A3237046199AE5D70B330970 /* Pods */,
 				DFC606A41953384D26FA88D6 /* Frameworks */,
@@ -116,11 +156,11 @@
 		BC57A4AE22E4B301000642B7 /* ChristLife */ = {
 			isa = PBXGroup;
 			children = (
-				BC57A4AF22E4B301000642B7 /* AppDelegate.swift */,
-				BC57A4BB22E4B302000642B7 /* Info.plist */,
-				BC4247FC22EEE62500A6F10A /* Assets.xcassets */,
-				BC28250E22E4B8AD0003F5D4 /* View */,
-				BC28250D22E4B6F80003F5D4 /* Controller */,
+				BC4247FF22EF0D1300A6F10A /* Supporting Files */,
+				BC4247FE22EF0BC900A6F10A /* Resources */,
+				BC28250E22E4B8AD0003F5D4 /* Views */,
+				BC28250D22E4B6F80003F5D4 /* Controllers */,
+				BC5169D022E6059D0029C516 /* Models */,
 			);
 			path = ChristLife;
 			sourceTree = "<group>";
@@ -407,7 +447,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L3Y3NN5H2E;
-				INFOPLIST_FILE = ChristLife/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ChristLife/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -427,7 +467,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L3Y3NN5H2E;
-				INFOPLIST_FILE = ChristLife/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ChristLife/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
