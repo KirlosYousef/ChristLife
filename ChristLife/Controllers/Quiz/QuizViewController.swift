@@ -77,7 +77,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let bColor: CGColor = #colorLiteral(red: 0.03194817156, green: 0.09534788877, blue: 0.2032955587, alpha: 1)
         let cRadius: CGFloat = 10
-        let bWidth: CGFloat = 2
+        let bWidth: CGFloat = 3
         // Buttons style
         cell.optionA.layer.borderColor = bColor
         cell.optionA.layer.borderWidth = bWidth
@@ -109,14 +109,14 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - UI
     func updateUI(){
         // If it was the last question
-        if (questionNum == 10) {
+        if (questionNum == 9) {
             self.view.addSubview(gameEndView)
             finalScoreLabel.text = String(score)
             //            print("Done")
         } else{
             questionNum += 1
             goToNextQuestion()
-            questionNumLabel.text = "\(questionNum)/10"
+            questionNumLabel.text = "\(questionNum+1)/10"
             
             // Scoring
             scoreLabel.text = "النقط: \(String(score))"
@@ -136,6 +136,8 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - Buttons
     @IBAction func answerpressed(_ sender: UIButton) {
 //        stopTimer()
+        seconds = 10
+        startTimer()
         let correctColor: CGColor = #colorLiteral(red: 0.003275793374, green: 0.7647058964, blue: 0.01348719592, alpha: 1)
         let wrongColor: CGColor = #colorLiteral(red: 0.9254902005, green: 0, blue: 0.06055648513, alpha: 1)
         if sender.tag == correctAnswer{
@@ -144,7 +146,6 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
             switch sender.tag {
             case 1:
                 currentCell.optionA.layer.borderColor = correctColor
-                currentCell.optionA.titleLabel?.textColor = UIColor(cgColor: correctColor)
                 break
             case 2:
                 currentCell.optionB.layer.borderColor = correctColor
@@ -186,7 +187,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         score = 0
         scoreLabel.text = "النقط: \(String(score))"
         
-        questionNum = 1
+        questionNum = 0
         questionNumLabel.text = "1/10"
         goToNextQuestion()
         self.view.sendSubviewToBack(gameEndView)
@@ -210,8 +211,10 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: - Timer
     @objc func updateTimer() {
-        if seconds < 1 {
-            stopTimer()
+        if seconds < 2 {
+            seconds = 10
+            startTimer()
+            updateUI()
         } else {
             seconds -= 1
         }
@@ -219,14 +222,15 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     func startTimer() {
+        if self.timer != nil {
+            self.timer.invalidate()
+            self.timer = nil
+        }
+        if seconds > 0 {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+        }
     }
 
-    func stopTimer() {
-        timer.invalidate()
-        seconds = 10    //Here we manually enter the restarting point for the seconds.
-        updateUI()
-    }
     
     // Temporary alert
 //    func showAlertWith(message msg: String) {
