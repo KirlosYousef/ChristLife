@@ -18,15 +18,19 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // Progress tracking
     @IBOutlet weak var questionNumLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
-    let progress = Progress(totalUnitCount: 10)
-    @IBOutlet var gameEndView: UIView!
     
+    @IBOutlet var gameEndView: UIView!
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    let progress = Progress(totalUnitCount: 10)
     let allQuestions = QuestionBank()
     var questionNum = 0
     var correctAnswer = 0
     var score = 0
     var selectedAnswer = 0
-    
+    var seconds = 10 // 10 seconds
+    var timer : Timer!
+    var currentCell = quizCollectionViewCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +65,6 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if #available(iOS 10.0, *) {collectionView.isPrefetchingEnabled = false}
-        
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "quizCell", for: indexPath) as! quizCollectionViewCell
         // Setting the question information
         let currentQuestion = allQuestions.list[indexPath.row]
@@ -87,6 +89,8 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.optionC.layer.borderWidth = bWidth
         cell.optionC.layer.cornerRadius = cRadius
         
+//        self.startTimer()
+        currentCell = cell
         return cell
     }
     
@@ -96,18 +100,13 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     
-    @IBAction func answerpressed(_ sender: UIButton) {
-        if sender.tag == correctAnswer{
-            // Scoring
-            score += 1
-        }
-        else {
-            //            print(correctAnswer)
-        }
-        updateUI()
+    func goToNextQuestion(){
+        let indexPath = IndexPath(row: questionNum, section: 0)
+        // Buttons target to the next question (Cell)
+        self.collectionView.scrollToItem(at: indexPath, at: [.centeredHorizontally], animated: true)
     }
     
-    
+    // MARK: - UI
     func updateUI(){
         // If it was the last question
         if (questionNum == 10) {
@@ -128,9 +127,57 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    
+    // MARK: - Buttons
+    @IBAction func answerpressed(_ sender: UIButton) {
+//        stopTimer()
+        let correctColor: CGColor = #colorLiteral(red: 0.003275793374, green: 0.7647058964, blue: 0.01348719592, alpha: 1)
+        let wrongColor: CGColor = #colorLiteral(red: 0.9254902005, green: 0, blue: 0.06055648513, alpha: 1)
+        if sender.tag == correctAnswer{
+            // Scoring
+            score += 1
+            switch sender.tag {
+            case 1:
+                currentCell.optionA.layer.borderColor = correctColor
+                currentCell.optionA.titleLabel?.textColor = UIColor(cgColor: correctColor)
+                break
+            case 2:
+                currentCell.optionB.layer.borderColor = correctColor
+                break
+            case 3:
+                currentCell.optionC.layer.borderColor = correctColor
+                break
+            default:
+                break
+            }
+        }
+        else {
+            switch sender.tag {
+            case 1:
+                currentCell.optionA.layer.borderColor = wrongColor
+                break
+            case 2:
+                currentCell.optionB.layer.borderColor = wrongColor
+                break
+            case 3:
+                currentCell.optionC.layer.borderColor = wrongColor
+                break
+            default:
+                break
+            }
+        }
+        updateUI()
+    }
+    
+    
     @IBAction func restartButton(_ sender: Any) {
         allQuestions.list.shuffle()
-        
+        seconds = 10
         // Reset progress tracking
         self.progress.completedUnitCount = 1
         self.progressView.setProgress(Float(self.progress.fractionCompleted), animated: true)
@@ -142,14 +189,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         questionNum = 1
         questionNumLabel.text = "1/10"
         goToNextQuestion()
-        
         self.view.sendSubviewToBack(gameEndView)
-    }
-    
-    func goToNextQuestion(){
-        let indexPath = IndexPath(row: questionNum, section: 0)
-        // Buttons target to the next question (Cell)
-        self.collectionView.scrollToItem(at: indexPath, at: [.centeredHorizontally], animated: true)
     }
     
     
@@ -168,7 +208,36 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    // MARK: - Timer
+    @objc func updateTimer() {
+        if seconds < 1 {
+            stopTimer()
+        } else {
+            seconds -= 1
+        }
+        timerLabel.text = "الوقت: \(seconds)"
     }
+
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+    }
+
+    func stopTimer() {
+        timer.invalidate()
+        seconds = 10    //Here we manually enter the restarting point for the seconds.
+        updateUI()
+    }
+    
+    // Temporary alert
+//    func showAlertWith(message msg: String) {
+//        let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
+//        self.present(alert, animated: true, completion: nil)
+//
+//        // change to desired number of seconds (in this case 5 seconds)
+//        let when = DispatchTime.now() + 0.5
+//        DispatchQueue.main.asyncAfter(deadline: when){
+//            // your code with delay
+//            alert.dismiss(animated: true, completion: nil)
+//        }
+//    }
 }

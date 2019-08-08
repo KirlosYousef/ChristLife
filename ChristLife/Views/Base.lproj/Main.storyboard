@@ -447,12 +447,23 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="91s-c4-T48">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="النقط: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErP-tM-pT3">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="89l-hv-iHp">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="33.333333333333336"/>
-                                                <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
-                                                <color key="textColor" red="0.98823529409999999" green="0.72549019609999998" blue="0.081456591630000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الوقت: 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OL8-Jj-bWp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="33.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
+                                                        <color key="textColor" red="0.98823529409999999" green="0.72549019609999998" blue="0.081456591630000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="النقط: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErP-tM-pT3">
+                                                        <rect key="frame" x="171.66666666666663" y="0.0" width="171.33333333333337" height="33.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
+                                                        <color key="textColor" red="0.98823529409999999" green="0.72549019609999998" blue="0.081456591630000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzV-93-hfS">
                                                 <rect key="frame" x="0.0" y="33.333333333333329" width="343" height="33.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
@@ -542,6 +553,7 @@
                                                                                 <constraint firstAttribute="height" constant="40" id="Wup-OU-Dq5"/>
                                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="eGF-A3-mKS"/>
                                                                             </constraints>
+                                                                            <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
                                                                             <state key="normal" title="optionA">
                                                                                 <color key="titleColor" red="0.031948171560000002" green="0.09534788877" blue="0.20329555869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             </state>
@@ -561,6 +573,7 @@
                                                                     <subviews>
                                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXb-Nd-AFZ">
                                                                             <rect key="frame" x="41.666666666666686" y="20.666666666666686" width="200" height="40"/>
+                                                                            <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
                                                                             <state key="normal" title="optionB">
                                                                                 <color key="titleColor" red="0.031948171560000002" green="0.09534788877" blue="0.20329555869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             </state>
@@ -580,6 +593,7 @@
                                                                     <subviews>
                                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubv-HX-70K">
                                                                             <rect key="frame" x="41.666666666666686" y="20.666666666666686" width="200" height="40"/>
+                                                                            <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
                                                                             <state key="normal" title="optionC">
                                                                                 <color key="titleColor" red="0.031948171560000002" green="0.09534788877" blue="0.20329555869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             </state>
@@ -669,6 +683,7 @@
                         <outlet property="questionNumLabel" destination="WzV-93-hfS" id="b3b-Zj-HYb"/>
                         <outlet property="scoreLabel" destination="ErP-tM-pT3" id="Aaa-mC-sDC"/>
                         <outlet property="shareScoreButton" destination="BMb-Yc-gBp" id="aWD-cg-k7q"/>
+                        <outlet property="timerLabel" destination="OL8-Jj-bWp" id="rwA-kU-3c0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1Y-UY-QYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
