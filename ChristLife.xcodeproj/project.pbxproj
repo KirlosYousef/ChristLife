@@ -12,11 +12,17 @@
 		BC5169D222E605C70029C516 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5169D122E605C70029C516 /* BookTableViewCell.swift */; };
 		BC57A4B022E4B301000642B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57A4AF22E4B301000642B7 /* AppDelegate.swift */; };
 		BC57A4B522E4B301000642B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC57A4B322E4B301000642B7 /* Main.storyboard */; };
+		BC6BEDBC22FB76EA0008503A /* Tajawal-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC6BEDBB22FB76EA0008503A /* Tajawal-Medium.ttf */; };
 		BC82A4A122EA129200EBE51E /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82A4A022EA129200EBE51E /* BooksTableViewController.swift */; };
 		BC82A4A522EA2B3900EBE51E /* JesusSaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82A4A422EA2B3900EBE51E /* JesusSaysViewController.swift */; };
 		BC82A4A722EA76E400EBE51E /* ChristLifeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82A4A622EA76E400EBE51E /* ChristLifeTabBarController.swift */; };
+		BC86946122FAF9C6007C0796 /* Tajawal-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC86946022FAF9C6007C0796 /* Tajawal-ExtraBold.ttf */; };
 		BC913F3822ECBF6D00EB2EE3 /* DailyVerses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC913F3722ECBF6D00EB2EE3 /* DailyVerses.swift */; };
-		BC913F3A22ECBFAC00EB2EE3 /* VersesFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = BC913F3922ECBFAB00EB2EE3 /* VersesFile.txt */; };
+		BC913F3A22ECBFAC00EB2EE3 /* VersesBank.txt in Resources */ = {isa = PBXBuildFile; fileRef = BC913F3922ECBFAB00EB2EE3 /* VersesBank.txt */; };
+		BCD4025D22F7B6B20003FB84 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4025C22F7B6B20003FB84 /* QuizViewController.swift */; };
+		BCD4025F22F7BA980003FB84 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4025E22F7BA980003FB84 /* Question.swift */; };
+		BCD4026122F7BDCD0003FB84 /* quizCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4026022F7BDCD0003FB84 /* quizCollectionViewCell.swift */; };
+		BCD4026322F7C3240003FB84 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4026222F7C3240003FB84 /* QuestionBank.swift */; };
 		BCEB003822E66B7500395ADA /* ChaptersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEB003722E66B7500395ADA /* ChaptersTableViewController.swift */; };
 		BCEB003A22E66BD600395ADA /* ChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEB003922E66BD600395ADA /* ChapterTableViewCell.swift */; };
 		C329BDC8FD6C0E3024C78A42 /* Pods_ChristLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155A2ED94561D1E42B328BF2 /* Pods_ChristLife.framework */; };
@@ -32,11 +38,17 @@
 		BC57A4AF22E4B301000642B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC57A4B422E4B301000642B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC57A4BB22E4B302000642B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC6BEDBB22FB76EA0008503A /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Medium.ttf"; sourceTree = "<group>"; };
 		BC82A4A022EA129200EBE51E /* BooksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
 		BC82A4A422EA2B3900EBE51E /* JesusSaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JesusSaysViewController.swift; sourceTree = "<group>"; };
 		BC82A4A622EA76E400EBE51E /* ChristLifeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristLifeTabBarController.swift; sourceTree = "<group>"; };
+		BC86946022FAF9C6007C0796 /* Tajawal-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-ExtraBold.ttf"; sourceTree = "<group>"; };
 		BC913F3722ECBF6D00EB2EE3 /* DailyVerses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyVerses.swift; sourceTree = "<group>"; };
-		BC913F3922ECBFAB00EB2EE3 /* VersesFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VersesFile.txt; sourceTree = "<group>"; };
+		BC913F3922ECBFAB00EB2EE3 /* VersesBank.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VersesBank.txt; sourceTree = "<group>"; };
+		BCD4025C22F7B6B20003FB84 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		BCD4025E22F7BA980003FB84 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		BCD4026022F7BDCD0003FB84 /* quizCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizCollectionViewCell.swift; sourceTree = "<group>"; };
+		BCD4026222F7C3240003FB84 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
 		BCEB003722E66B7500395ADA /* ChaptersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersTableViewController.swift; sourceTree = "<group>"; };
 		BCEB003922E66BD600395ADA /* ChapterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTableViewCell.swift; sourceTree = "<group>"; };
 		E419B43678B20206EB8C620C /* Pods-ChristLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChristLife.release.xcconfig"; path = "Target Support Files/Pods-ChristLife/Pods-ChristLife.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +81,7 @@
 				BC42480222EF0F8900A6F10A /* Main */,
 				BC42480022EF0F6000A6F10A /* Bible */,
 				BC42480122EF0F6B00A6F10A /* JesusSays */,
+				BCD4025B22F7B6800003FB84 /* Quiz */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -85,7 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				BC4247FC22EEE62500A6F10A /* Assets.xcassets */,
-				BC913F3922ECBFAB00EB2EE3 /* VersesFile.txt */,
+				BC913F3922ECBFAB00EB2EE3 /* VersesBank.txt */,
+				BC86946222FAFA5C007C0796 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -105,6 +119,8 @@
 				BC5169CE22E5FEA00029C516 /* BibleViewController.swift */,
 				BC82A4A022EA129200EBE51E /* BooksTableViewController.swift */,
 				BCEB003722E66B7500395ADA /* ChaptersTableViewController.swift */,
+				BC5169D122E605C70029C516 /* BookTableViewCell.swift */,
+				BCEB003922E66BD600395ADA /* ChapterTableViewCell.swift */,
 			);
 			path = Bible;
 			sourceTree = "<group>";
@@ -128,9 +144,9 @@
 		BC5169D022E6059D0029C516 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BC5169D122E605C70029C516 /* BookTableViewCell.swift */,
-				BCEB003922E66BD600395ADA /* ChapterTableViewCell.swift */,
 				BC913F3722ECBF6D00EB2EE3 /* DailyVerses.swift */,
+				BCD4025E22F7BA980003FB84 /* Question.swift */,
+				BCD4026222F7C3240003FB84 /* QuestionBank.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +179,24 @@
 				BC5169D022E6059D0029C516 /* Models */,
 			);
 			path = ChristLife;
+			sourceTree = "<group>";
+		};
+		BC86946222FAFA5C007C0796 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BC86946022FAF9C6007C0796 /* Tajawal-ExtraBold.ttf */,
+				BC6BEDBB22FB76EA0008503A /* Tajawal-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BCD4025B22F7B6800003FB84 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				BCD4025C22F7B6B20003FB84 /* QuizViewController.swift */,
+				BCD4026022F7BDCD0003FB84 /* quizCollectionViewCell.swift */,
+			);
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 		DFC606A41953384D26FA88D6 /* Frameworks */ = {
@@ -207,6 +241,11 @@
 				TargetAttributes = {
 					BC57A4AB22E4B301000642B7 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -234,8 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC4247FD22EEE62500A6F10A /* Assets.xcassets in Resources */,
-				BC913F3A22ECBFAC00EB2EE3 /* VersesFile.txt in Resources */,
+				BC913F3A22ECBFAC00EB2EE3 /* VersesBank.txt in Resources */,
 				BC57A4B522E4B301000642B7 /* Main.storyboard in Resources */,
+				BC6BEDBC22FB76EA0008503A /* Tajawal-Medium.ttf in Resources */,
+				BC86946122FAF9C6007C0796 /* Tajawal-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,13 +339,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC5169D222E605C70029C516 /* BookTableViewCell.swift in Sources */,
+				BCD4026322F7C3240003FB84 /* QuestionBank.swift in Sources */,
+				BCD4025D22F7B6B20003FB84 /* QuizViewController.swift in Sources */,
 				BC82A4A522EA2B3900EBE51E /* JesusSaysViewController.swift in Sources */,
 				BC82A4A722EA76E400EBE51E /* ChristLifeTabBarController.swift in Sources */,
 				BC913F3822ECBF6D00EB2EE3 /* DailyVerses.swift in Sources */,
 				BCEB003822E66B7500395ADA /* ChaptersTableViewController.swift in Sources */,
 				BCEB003A22E66BD600395ADA /* ChapterTableViewCell.swift in Sources */,
+				BCD4026122F7BDCD0003FB84 /* quizCollectionViewCell.swift in Sources */,
 				BC57A4B022E4B301000642B7 /* AppDelegate.swift in Sources */,
 				BC82A4A122EA129200EBE51E /* BooksTableViewController.swift in Sources */,
+				BCD4025F22F7BA980003FB84 /* Question.swift in Sources */,
 				BC5169CF22E5FEA00029C516 /* BibleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

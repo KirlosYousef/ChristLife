@@ -18,8 +18,8 @@ struct Verse {
 class DailyVerses {
     var verses = [Verse]()
     
-    func getVerseInfo() -> [Verse] {    
-        if let filepath = Bundle.main.path(forResource: "VersesFile", ofType: "txt") {
+    func getVerseInfo() -> [Verse] {
+        if let filepath = Bundle.main.path(forResource: "VersesBank", ofType: "txt") {
             do {
                 let contents = try String(contentsOfFile: filepath)
                 

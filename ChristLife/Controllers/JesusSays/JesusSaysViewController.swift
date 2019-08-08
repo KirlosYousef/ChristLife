@@ -12,6 +12,7 @@ import dbt_sdk
 class JesusSaysViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var verse: UILabel!
     let dailyVerses = DailyVerses()
     
@@ -43,6 +44,7 @@ class JesusSaysViewController: UIViewController {
         let dayOfTheYear = Calendar.current.ordinality(of: .day, in: .year, for: Date())
         // Call the getVerseInfo function and set the returned verses to verses variable
         let verses = dailyVerses.getVerseInfo()
+        // Choose the verse of the day according to the dayOfTheYear
         let verseOfToday = verses[dayOfTheYear!]
         
         // Get the Verse of the recived info

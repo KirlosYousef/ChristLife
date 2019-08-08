@@ -23,6 +23,7 @@ class ChaptersTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundView = UIImageView(image: UIImage(named: "BibleBG.jpg"))
         searchBar.delegate = self
         //Setting the cancel button of the search bar always active
         searchBar.resignFirstResponder()
@@ -93,7 +94,7 @@ class ChaptersTableViewController: UITableViewController, UISearchBarDelegate {
         tableView.reloadData()
     }
     
-         // MARK: - Navigation
+    // MARK: - Navigation
     func doDismiss(book: String, chapter: Int) {
         if let delegate = self.delegate{
             delegate.pass(volume: currentVolume,book: book, chapter: chapter)

@@ -11,13 +11,18 @@ import UserNotifications
 
 class ChristLifeTabBarController: UITabBarController {
     
-    
     let jesusSaysVC = JesusSaysViewController()
     let center = UNUserNotificationCenter.current()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Transparent background for every UITabBar.
+        let tabBar = UITabBar.appearance()
+        tabBar.barTintColor = UIColor.clear
+        tabBar.backgroundImage = UIImage()
+        tabBar.shadowImage = UIImage()
+        
         // Notification settings.
         jesusSaysVC.getVerseOfToday { (verse) in
             if let verse = verse {
@@ -27,7 +32,7 @@ class ChristLifeTabBarController: UITabBarController {
                 content.sound = .default
                 var date = DateComponents()
                 date.hour = 00
-                date.minute = 01
+                date.minute = 10
                 
                 let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
                 let request = UNNotificationRequest(identifier: "JesusSaysNotification", content: content, trigger: trigger)

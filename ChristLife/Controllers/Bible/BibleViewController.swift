@@ -15,6 +15,8 @@ protocol isAbleToReceiveData{
 
 class BibleViewController: UIViewController, isAbleToReceiveData{
     
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var booksButtonOutlet: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var biblePageTitle: UINavigationItem!
     @IBOutlet weak var versesTextView: UITextView!
@@ -29,11 +31,20 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentVolume = volumes[0]
+        // ActivityIndicator
+        self.activityIndicator.hidesWhenStopped = true
+        view.addSubview(self.activityIndicator)
+        self.activityIndicator.startAnimating()
+
         
-                // ActivityIndicator
-                self.activityIndicator.hidesWhenStopped = true
-                view.addSubview(self.activityIndicator)
-                self.activityIndicator.startAnimating()
+        // Navigation bar style
+        navBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navBar.shadowImage = UIImage()
+        navBar.isTranslucent = true
+        
+        booksButtonOutlet.layer.cornerRadius = 15
+        booksButtonOutlet.clipsToBounds = true
+        
     }
     
     
