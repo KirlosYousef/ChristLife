@@ -109,4 +109,8 @@ class ChaptersTableViewController: UITableViewController, UISearchBarDelegate {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

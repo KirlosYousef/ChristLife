@@ -449,14 +449,14 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="النقط: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErP-tM-pT3">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="33.333333333333336"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
+                                                <color key="textColor" red="0.98823529409999999" green="0.72549019609999998" blue="0.081456591630000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzV-93-hfS">
                                                 <rect key="frame" x="0.0" y="33.333333333333329" width="343" height="33.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
+                                                <color key="textColor" red="0.98823529409999999" green="0.72549019609999998" blue="0.081456591630000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="SHh-zT-RXl">
@@ -517,7 +517,7 @@
                                                                                 <constraint firstAttribute="height" constant="80" id="V24-aK-bDE"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" red="0.98823529409999999" green="0.72549019609999998" blue="0.081456591630000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -662,10 +662,13 @@
                     <tabBarItem key="tabBarItem" title="اسئلة" image="Quizicon" id="jwJ-kc-zim"/>
                     <connections>
                         <outlet property="collectionView" destination="hYl-B0-KYj" id="pbT-T2-1QV"/>
+                        <outlet property="finalScoreLabel" destination="W7O-pa-kYO" id="5wV-Y0-lhf"/>
+                        <outlet property="gameEndView" destination="kUr-FX-Nv2" id="dbC-q0-wcJ"/>
+                        <outlet property="playAgainButton" destination="eXt-3s-Cyn" id="RTx-Ft-1lU"/>
                         <outlet property="progressView" destination="SHh-zT-RXl" id="IZC-tz-ETj"/>
                         <outlet property="questionNumLabel" destination="WzV-93-hfS" id="b3b-Zj-HYb"/>
                         <outlet property="scoreLabel" destination="ErP-tM-pT3" id="Aaa-mC-sDC"/>
-                        <outlet property="winView" destination="kUr-FX-Nv2" id="dbC-q0-wcJ"/>
+                        <outlet property="shareScoreButton" destination="BMb-Yc-gBp" id="aWD-cg-k7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1Y-UY-QYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -673,29 +676,80 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="730"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyBG" translatesAutoresizingMaskIntoConstraints="NO" id="wEB-eF-gYb">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="730"/>
+                        </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jMY-hJ-Exu">
                             <rect key="frame" x="0.0" y="44" width="375" height="652"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مبروك!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7O-pa-kYO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="326"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="النقط الى جمعتها" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIZ-AP-TRA">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
+                                    <fontDescription key="fontDescription" name="Tajawal-ExtraBold" family="Tajawal ExtraBold" pointSize="32"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXt-3s-Cyn">
-                                    <rect key="frame" x="0.0" y="326" width="375" height="326"/>
-                                    <state key="normal" title="العب تاني؟">
-                                        <color key="titleColor" red="0.086274509799999996" green="0.34509803919999998" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="restartButton:" destination="g8D-pc-sEJ" eventType="touchUpInside" id="Hys-YD-E6g"/>
-                                    </connections>
-                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7O-pa-kYO">
+                                    <rect key="frame" x="0.0" y="163" width="375" height="163"/>
+                                    <fontDescription key="fontDescription" name="Tajawal-ExtraBold" family="Tajawal ExtraBold" pointSize="150"/>
+                                    <color key="textColor" red="0.98823529409999999" green="0.72549019609999998" blue="0.081456591630000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEi-c9-WQr">
+                                    <rect key="frame" x="0.0" y="326" width="375" height="163"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXt-3s-Cyn">
+                                            <rect key="frame" x="87.666666666666686" y="83" width="200" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="8uH-cC-vZ6"/>
+                                                <constraint firstAttribute="height" constant="50" id="lln-0d-Ue1"/>
+                                            </constraints>
+                                            <state key="normal" title="العب تاني؟">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="restartButton:" destination="g8D-pc-sEJ" eventType="touchUpInside" id="Hys-YD-E6g"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="eXt-3s-Cyn" firstAttribute="centerX" secondItem="hEi-c9-WQr" secondAttribute="centerX" id="7qz-rb-aBV"/>
+                                        <constraint firstAttribute="bottom" secondItem="eXt-3s-Cyn" secondAttribute="bottom" constant="30" id="HLd-oE-kfH"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akH-k3-0Mm">
+                                    <rect key="frame" x="0.0" y="489" width="375" height="163"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMb-Yc-gBp">
+                                            <rect key="frame" x="87.666666666666686" y="30" width="200" height="50"/>
+                                            <state key="normal" title="ابعتها لأصحابك">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="shareScorePressed:" destination="g8D-pc-sEJ" eventType="touchUpInside" id="hxn-MC-R8l"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="BMb-Yc-gBp" firstAttribute="centerX" secondItem="akH-k3-0Mm" secondAttribute="centerX" id="biM-5d-e3t"/>
+                                        <constraint firstItem="BMb-Yc-gBp" firstAttribute="top" secondItem="akH-k3-0Mm" secondAttribute="top" constant="30" id="yY7-DI-T5A"/>
+                                    </constraints>
+                                </view>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="BMb-Yc-gBp" firstAttribute="width" secondItem="eXt-3s-Cyn" secondAttribute="width" id="Mzu-KL-a5Z"/>
+                                <constraint firstItem="BMb-Yc-gBp" firstAttribute="height" secondItem="eXt-3s-Cyn" secondAttribute="height" id="lpR-sR-t61"/>
+                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="wEB-eF-gYb" secondAttribute="bottom" id="0MB-AA-hjp"/>
                         <constraint firstItem="Ydz-4d-ZRM" firstAttribute="bottom" secondItem="jMY-hJ-Exu" secondAttribute="bottom" id="DgY-LD-0qc"/>
+                        <constraint firstItem="wEB-eF-gYb" firstAttribute="trailing" secondItem="Ydz-4d-ZRM" secondAttribute="trailing" id="HZ9-Jn-JOs"/>
+                        <constraint firstItem="wEB-eF-gYb" firstAttribute="top" secondItem="kUr-FX-Nv2" secondAttribute="top" id="ch1-gq-jGN"/>
+                        <constraint firstItem="wEB-eF-gYb" firstAttribute="leading" secondItem="Ydz-4d-ZRM" secondAttribute="leading" id="fhT-up-i3o"/>
                         <constraint firstItem="jMY-hJ-Exu" firstAttribute="top" secondItem="Ydz-4d-ZRM" secondAttribute="top" id="qsa-ec-zMg"/>
                         <constraint firstItem="jMY-hJ-Exu" firstAttribute="leading" secondItem="Ydz-4d-ZRM" secondAttribute="leading" id="xbs-Nc-Ukt"/>
                         <constraint firstItem="Ydz-4d-ZRM" firstAttribute="trailing" secondItem="jMY-hJ-Exu" secondAttribute="trailing" id="zmU-Fn-tCm"/>

@@ -73,4 +73,9 @@ class JesusSaysViewController: UIViewController {
         self.present(activityViewController, animated: true, completion: nil)
         
     }
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

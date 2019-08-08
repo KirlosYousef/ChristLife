@@ -109,4 +109,9 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
             booksVC.volumes = volumes
         }
     }
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

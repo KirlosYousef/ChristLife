@@ -13,12 +13,14 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
-    
+    @IBOutlet weak var playAgainButton: UIButton!
+    @IBOutlet weak var finalScoreLabel: UILabel!
+    @IBOutlet weak var shareScoreButton: UIButton!
     // Progress tracking
     @IBOutlet weak var questionNumLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     let progress = Progress(totalUnitCount: 10)
-    @IBOutlet var winView: UIView!
+    @IBOutlet var gameEndView: UIView!
     
     let allQuestions = QuestionBank()
     var questionNum = 1
@@ -33,12 +35,22 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.collectionView.dataSource = self
         allQuestions.list.shuffle()
         
+        let cornerRadius: CGFloat = 10
+        let bColor: CGColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        let bWidth: CGFloat = 1
         // Progressbar
         progressView.progress = 0.1
         progress.completedUnitCount = 1
         progressView.progressImage = #imageLiteral(resourceName: "ProgressBarBG")
-        progressView.layer.cornerRadius = 10
+        progressView.layer.cornerRadius = cornerRadius
         progressView.clipsToBounds = true
+        // Game ended scene
+        playAgainButton.layer.borderColor = bColor
+        playAgainButton.layer.cornerRadius = cornerRadius
+        playAgainButton.layer.borderWidth = bWidth
+        shareScoreButton.layer.borderColor = bColor
+        shareScoreButton.layer.cornerRadius = cornerRadius
+        shareScoreButton.layer.borderWidth = bWidth
         
         // Centers the subview
 //                winView.center = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
@@ -104,7 +116,8 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func updateUI(){
         // If it was the last question
         if (questionNum == 10) {
-            self.view.addSubview(winView)
+            self.view.addSubview(gameEndView)
+            finalScoreLabel.text = String(score)
             print("Done")
         } else{
             questionNum += 1
@@ -135,12 +148,32 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         questionNumLabel.text = "1/10"
         goToNextQuestion()
         
-        self.view.sendSubviewToBack(winView)
+        self.view.sendSubviewToBack(gameEndView)
     }
     
     func goToNextQuestion(){
         let indexPath = IndexPath(row: questionNum, section: 0)
         // Buttons target to the next question (Cell)
         self.collectionView.scrollToItem(at: indexPath, at: [.centeredHorizontally], animated: true)
+    }
+    
+
+    @IBAction func shareScorePressed(_ sender: Any) {
+        // text to share
+        let shareText = "انا جبت \(score) نقط من 10 فى مسابقات الانجيل على ابلكيشن ChristLife."
+        
+        // set up activity view controller
+        let textToShare = [ shareText ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare as [Any], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+        
+    }
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
