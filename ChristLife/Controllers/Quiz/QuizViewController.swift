@@ -10,7 +10,6 @@ import UIKit
 
 class QuizViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var playAgainButton: UIButton!
@@ -23,7 +22,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet var gameEndView: UIView!
     
     let allQuestions = QuestionBank()
-    var questionNum = 1
+    var questionNum = 0
     var correctAnswer = 0
     var score = 0
     var selectedAnswer = 0
@@ -31,6 +30,9 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // To fix the sliding cells problem
+        if #available(iOS 10.0, *) {collectionView.isPrefetchingEnabled = false}
+        
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         allQuestions.list.shuffle()
@@ -51,20 +53,17 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         shareScoreButton.layer.borderColor = bColor
         shareScoreButton.layer.cornerRadius = cornerRadius
         shareScoreButton.layer.borderWidth = bWidth
-        
-        // Centers the subview
-//                winView.center = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return allQuestions.list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "quizCell", for: indexPath) as! quizCollectionViewCell
+        if #available(iOS 10.0, *) {collectionView.isPrefetchingEnabled = false}
         
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "quizCell", for: indexPath) as! quizCollectionViewCell
         // Setting the question information
         let currentQuestion = allQuestions.list[indexPath.row]
         cell.questionLabel.text = currentQuestion.question
@@ -72,11 +71,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.optionB.setTitle(currentQuestion.optionB, for: .normal)
         cell.optionC.setTitle(currentQuestion.optionC, for: .normal)
         
-        if indexPath.row > 1{
-            correctAnswer = allQuestions.list[indexPath.row - 1].correctAnswer
-        } else {
-            correctAnswer = currentQuestion.correctAnswer
-        }
+        correctAnswer = currentQuestion.correctAnswer
         
         let bColor: CGColor = #colorLiteral(red: 0.03194817156, green: 0.09534788877, blue: 0.2032955587, alpha: 1)
         let cRadius: CGFloat = 10
@@ -107,7 +102,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
             score += 1
         }
         else {
-//            print(correctAnswer)
+            //            print(correctAnswer)
         }
         updateUI()
     }
@@ -118,7 +113,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if (questionNum == 10) {
             self.view.addSubview(gameEndView)
             finalScoreLabel.text = String(score)
-            print("Done")
+            //            print("Done")
         } else{
             questionNum += 1
             goToNextQuestion()
@@ -157,7 +152,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.collectionView.scrollToItem(at: indexPath, at: [.centeredHorizontally], animated: true)
     }
     
-
+    
     @IBAction func shareScorePressed(_ sender: Any) {
         // text to share
         let shareText = "انا جبت \(score) نقط من 10 فى مسابقات الانجيل على ابلكيشن ChristLife."
