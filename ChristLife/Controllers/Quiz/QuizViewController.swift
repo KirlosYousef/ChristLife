@@ -140,24 +140,14 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         startTimer()
         let correctColor: CGColor = #colorLiteral(red: 0.003275793374, green: 0.7647058964, blue: 0.01348719592, alpha: 1)
         let wrongColor: CGColor = #colorLiteral(red: 0.9254902005, green: 0, blue: 0.06055648513, alpha: 1)
+        
         if sender.tag == correctAnswer{
             // Scoring
             score += 1
-            switch sender.tag {
-            case 1:
-                currentCell.optionA.layer.borderColor = correctColor
-                break
-            case 2:
-                currentCell.optionB.layer.borderColor = correctColor
-                break
-            case 3:
-                currentCell.optionC.layer.borderColor = correctColor
-                break
-            default:
-                break
-            }
         }
-        else {
+        
+        // Wrong answer
+        if sender.tag != correctAnswer {
             switch sender.tag {
             case 1:
                 currentCell.optionA.layer.borderColor = wrongColor
@@ -172,6 +162,21 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 break
             }
         }
+        // Show the correct answer
+            switch correctAnswer {
+            case 1:
+                currentCell.optionA.layer.borderColor = correctColor
+                break
+            case 2:
+                currentCell.optionB.layer.borderColor = correctColor
+                break
+            case 3:
+                currentCell.optionC.layer.borderColor = correctColor
+                break
+            default:
+                break
+            }
+
         updateUI()
     }
     

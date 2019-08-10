@@ -122,7 +122,7 @@ class QuestionBank{
         
         list.append(Question(question: "إن كل من يعمل الخطية هو ..... للخطية", optionA: "عبد", optionB: "محب", optionC: "مطيع", correctAnswer: 1))
         
-        list.append(Question(question: "..... لأجل معاصينا مسحوق لأجل آثامنا", optionA: "مجروحين", optionB: "أهين", optionC: "دفن", correctAnswer: 1))
+        list.append(Question(question: "..... لأجل معاصينا مسحوق لأجل آثامنا", optionA: "مجروح", optionB: "أهين", optionC: "دفن", correctAnswer: 1))
         
         list.append(Question(question: "المساير الحكماء يصير ..... مرفيق الجهال يضر", optionA: "هادئًا", optionB: "غنيًا", optionC: "حكيمًا", correctAnswer: 3))
         
