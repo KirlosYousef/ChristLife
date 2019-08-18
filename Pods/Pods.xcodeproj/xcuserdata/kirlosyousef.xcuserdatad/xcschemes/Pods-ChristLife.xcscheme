@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "1030"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5240CC2A58E9BF3B896C21E68CDC5F0C"
+               BlueprintIdentifier = "FDA1941F620A44413E582F472E10B52E"
                BuildableName = "Pods_ChristLife.framework"
                BlueprintName = "Pods-ChristLife"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5240CC2A58E9BF3B896C21E68CDC5F0C"
+            BlueprintIdentifier = "FDA1941F620A44413E582F472E10B52E"
             BuildableName = "Pods_ChristLife.framework"
             BlueprintName = "Pods-ChristLife"
             ReferencedContainer = "container:Pods.xcodeproj">

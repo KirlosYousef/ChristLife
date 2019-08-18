@@ -31,8 +31,8 @@ class ChristLifeTabBarController: UITabBarController {
                 content.body = verse
                 content.sound = .default
                 var date = DateComponents()
-                date.hour = 00
-                date.minute = 10
+                date.hour = 08
+                date.minute = 00
                 
                 let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
                 let request = UNNotificationRequest(identifier: "JesusSaysNotification", content: content, trigger: trigger)
@@ -82,6 +82,5 @@ class ChristLifeTabBarController: UITabBarController {
                 }
             }
         }
-        
     }
 }

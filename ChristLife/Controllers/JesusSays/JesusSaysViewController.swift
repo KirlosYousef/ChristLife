@@ -19,10 +19,10 @@ class JesusSaysViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                // ActivityIndicator
-                self.activityIndicator.hidesWhenStopped = true
-                view.addSubview(self.activityIndicator)
-                self.activityIndicator.startAnimating()
+        // ActivityIndicator
+        self.activityIndicator.hidesWhenStopped = true
+        view.addSubview(self.activityIndicator)
+        self.activityIndicator.startAnimating()
     }
     
     

@@ -100,7 +100,7 @@ class BooksTableViewController: UITableViewController, UISearchBarDelegate{
         tableView.reloadData()
     }
     
-         // MARK: - Navigation
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "bookToChapterSegue"{
             let chaptersTableView = segue.destination as! ChaptersTableViewController

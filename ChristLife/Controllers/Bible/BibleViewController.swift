@@ -35,7 +35,7 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
         self.activityIndicator.hidesWhenStopped = true
         view.addSubview(self.activityIndicator)
         self.activityIndicator.startAnimating()
-
+        
         
         // Navigation bar style
         navBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)

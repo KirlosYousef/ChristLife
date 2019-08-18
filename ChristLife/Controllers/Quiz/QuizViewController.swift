@@ -28,7 +28,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var correctAnswer = 0
     var score = 0
     var selectedAnswer = 0
-    var seconds = 10 // 10 seconds
+    var seconds = 10
     var timer : Timer!
     var currentCell = quizCollectionViewCell()
     
@@ -59,6 +59,11 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         shareScoreButton.layer.borderWidth = bWidth
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.view.addSubview(gameEndView)
+        finalScoreLabel.text = String(score)
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allQuestions.list.count
@@ -89,7 +94,6 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.optionC.layer.borderWidth = bWidth
         cell.optionC.layer.cornerRadius = cRadius
         
-//        self.startTimer()
         currentCell = cell
         return cell
     }
@@ -112,7 +116,6 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if (questionNum == 9) {
             self.view.addSubview(gameEndView)
             finalScoreLabel.text = String(score)
-            //            print("Done")
         } else{
             questionNum += 1
             goToNextQuestion()
@@ -135,7 +138,6 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: - Buttons
     @IBAction func answerpressed(_ sender: UIButton) {
-//        stopTimer()
         seconds = 10
         startTimer()
         let correctColor: CGColor = #colorLiteral(red: 0.003275793374, green: 0.7647058964, blue: 0.01348719592, alpha: 1)
@@ -163,20 +165,20 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         // Show the correct answer
-            switch correctAnswer {
-            case 1:
-                currentCell.optionA.layer.borderColor = correctColor
-                break
-            case 2:
-                currentCell.optionB.layer.borderColor = correctColor
-                break
-            case 3:
-                currentCell.optionC.layer.borderColor = correctColor
-                break
-            default:
-                break
-            }
-
+        switch correctAnswer {
+        case 1:
+            currentCell.optionA.layer.borderColor = correctColor
+            break
+        case 2:
+            currentCell.optionB.layer.borderColor = correctColor
+            break
+        case 3:
+            currentCell.optionC.layer.borderColor = correctColor
+            break
+        default:
+            break
+        }
+        
         updateUI()
     }
     
@@ -225,28 +227,14 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         timerLabel.text = "الوقت: \(seconds)"
     }
-
+    
     func startTimer() {
         if self.timer != nil {
             self.timer.invalidate()
             self.timer = nil
         }
         if seconds > 0 {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
         }
     }
-
-    
-    // Temporary alert
-//    func showAlertWith(message msg: String) {
-//        let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
-//        self.present(alert, animated: true, completion: nil)
-//
-//        // change to desired number of seconds (in this case 5 seconds)
-//        let when = DispatchTime.now() + 0.5
-//        DispatchQueue.main.asyncAfter(deadline: when){
-//            // your code with delay
-//            alert.dismiss(animated: true, completion: nil)
-//        }
-//    }
 }

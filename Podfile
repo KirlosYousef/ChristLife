@@ -6,5 +6,5 @@ target 'ChristLife' do
   use_frameworks!
 
   # Pods for ChristLife
-  pod 'dbt-sdk', '~> 0.2.2'
+  pod 'dbt-sdk', '~> 0.2.2', :inhibit_warnings => true
 end

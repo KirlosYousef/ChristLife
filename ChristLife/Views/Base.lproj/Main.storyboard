@@ -39,7 +39,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يسوع بيقولك النهارده" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvi-ah-47C">
-                                                <rect key="frame" x="0.0" y="37.666666666666657" width="375" height="25"/>
+                                                <rect key="frame" x="0.0" y="35.333333333333343" width="375" height="29.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Tajawal-ExtraBold" family="Tajawal ExtraBold" pointSize="25"/>
                                                 <color key="textColor" red="0.2274509804" green="0.41558700799999998" blue="0.73939126730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="120" width="375" height="408"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VerseBG" translatesAutoresizingMaskIntoConstraints="NO" id="Thb-Pd-0MM">
-                                                <rect key="frame" x="0.0" y="44.666666666666686" width="375" height="318.66666666666669"/>
+                                                <rect key="frame" x="0.0" y="196" width="375" height="16"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9I-c1-aAP">
                                                 <rect key="frame" x="0.0" y="125" width="375" height="158"/>
@@ -106,7 +106,7 @@
                                                 <rect key="frame" x="112.66666666666669" y="6.3333333333333712" width="150" height="87.333333333333329"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ShareButtonBG" translatesAutoresizingMaskIntoConstraints="NO" id="RAv-8y-SMM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="150.00000000000006" height="87.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="87.333333333333329"/>
                                                     </imageView>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xc-LI-FAk">
                                                         <rect key="frame" x="5" y="28.666666666666629" width="140" height="30"/>

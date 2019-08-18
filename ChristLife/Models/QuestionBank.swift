@@ -39,7 +39,7 @@ class QuestionBank{
         list.append(Question(question: "قال السيد المسيح : أليس العشرة قد طهروا أين", optionA: "اهلهم", optionB: "ذهبوا", optionC: "التسعة", correctAnswer: 3))
         
         list.append(Question(question: "تعجب معلموا اليهود بيسوع من فهمه وأجوبته وهو عمره", optionA: "8", optionB: "12", optionC: "15", correctAnswer: 2))
-
+        
         list.append(Question(question: "حياة التوبة يمكن أن تكون فى", optionA: "لحظة واحدة", optionB: "طول الحياة", optionC: "قبل الاعتراف مباشرة", correctAnswer: 2))
         
         list.append(Question(question: "فى نهاية التجربة كان أيوب", optionA: "صار مسيحيا", optionB: "أحب الله أكثر", optionC: "ترك الله", correctAnswer: 2))
