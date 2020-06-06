@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NOn-7N-Bdd">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NOn-7N-Bdd">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -61,7 +59,7 @@
                                         <rect key="frame" x="0.0" y="120" width="375" height="408"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VerseBG" translatesAutoresizingMaskIntoConstraints="NO" id="Thb-Pd-0MM">
-                                                <rect key="frame" x="0.0" y="196" width="375" height="16"/>
+                                                <rect key="frame" x="0.0" y="44.666666666666686" width="375" height="318.66666666666669"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9I-c1-aAP">
                                                 <rect key="frame" x="0.0" y="125" width="375" height="158"/>
@@ -183,7 +181,7 @@
             <objects>
                 <tableViewController id="0iF-x2-UYf" customClass="BooksTableViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="91I-JM-zWA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="minimal" text="" showsCancelButton="YES" id="sFW-cX-r42">
@@ -195,14 +193,14 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookCell" id="eBR-tU-ca2" customClass="BookTableViewCell" customModule="ChristLife" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="39.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBR-tU-ca2" id="TCa-4o-Zmw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الانجيل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsa-mg-Xpd">
-                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
+                                            <rect key="frame" x="16" y="10.999999999999998" width="343" height="17.333333333333329"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
                                             <color key="textColor" red="0.98823529409999999" green="0.72549019609999998" blue="0.081456591630000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -248,7 +246,7 @@
             <objects>
                 <tableViewController id="6Wf-pf-1ml" customClass="ChaptersTableViewController" customModule="ChristLife" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="s3B-vY-HKu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.062745098040000002" green="0.64705882349999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -262,14 +260,14 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="chapterCell" id="Bqu-ec-RvJ" customClass="ChapterTableViewCell" customModule="ChristLife" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="37.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bqu-ec-RvJ" id="hSo-Nu-Rl7">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="37.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2v-9G-bM3">
-                                            <rect key="frame" x="10" y="10.000000000000002" width="355" height="23.666666666666671"/>
+                                            <rect key="frame" x="10" y="9.9999999999999982" width="355" height="17.333333333333329"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="Tajawal-Medium" family="Tajawal Medium" pointSize="17"/>
@@ -689,25 +687,25 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="730"/>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jMY-hJ-Exu">
-                            <rect key="frame" x="0.0" y="44" width="375" height="652"/>
+                            <rect key="frame" x="0.0" y="44" width="375" height="686"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="النقط الى جمعتها" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIZ-AP-TRA">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="171.66666666666666"/>
                                     <fontDescription key="fontDescription" name="Tajawal-ExtraBold" family="Tajawal ExtraBold" pointSize="32"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7O-pa-kYO">
-                                    <rect key="frame" x="0.0" y="163" width="375" height="163"/>
+                                    <rect key="frame" x="0.0" y="171.66666666666663" width="375" height="171.33333333333337"/>
                                     <fontDescription key="fontDescription" name="Tajawal-ExtraBold" family="Tajawal ExtraBold" pointSize="150"/>
                                     <color key="textColor" red="0.98823529409999999" green="0.72549019609999998" blue="0.081456591630000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEi-c9-WQr">
-                                    <rect key="frame" x="0.0" y="326" width="375" height="163"/>
+                                    <rect key="frame" x="0.0" y="343" width="375" height="171.66666666666663"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXt-3s-Cyn">
-                                            <rect key="frame" x="87.666666666666686" y="83" width="200" height="50"/>
+                                            <rect key="frame" x="87.666666666666686" y="91.666666666666686" width="200" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="8uH-cC-vZ6"/>
                                                 <constraint firstAttribute="height" constant="50" id="lln-0d-Ue1"/>
@@ -727,7 +725,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akH-k3-0Mm">
-                                    <rect key="frame" x="0.0" y="489" width="375" height="163"/>
+                                    <rect key="frame" x="0.0" y="514.66666666666663" width="375" height="171.33333333333337"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMb-Yc-gBp">
                                             <rect key="frame" x="87.666666666666686" y="30" width="200" height="50"/>

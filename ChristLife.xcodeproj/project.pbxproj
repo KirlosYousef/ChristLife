@@ -19,6 +19,7 @@
 		BC86946122FAF9C6007C0796 /* Tajawal-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC86946022FAF9C6007C0796 /* Tajawal-ExtraBold.ttf */; };
 		BC913F3822ECBF6D00EB2EE3 /* DailyVerses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC913F3722ECBF6D00EB2EE3 /* DailyVerses.swift */; };
 		BC913F3A22ECBFAC00EB2EE3 /* VersesBank.txt in Resources */ = {isa = PBXBuildFile; fileRef = BC913F3922ECBFAB00EB2EE3 /* VersesBank.txt */; };
+		BC94D4A9248C221F0001275C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC94D4A8248C221F0001275C /* LaunchScreen.storyboard */; };
 		BCD4025D22F7B6B20003FB84 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4025C22F7B6B20003FB84 /* QuizViewController.swift */; };
 		BCD4025F22F7BA980003FB84 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4025E22F7BA980003FB84 /* Question.swift */; };
 		BCD4026122F7BDCD0003FB84 /* quizCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4026022F7BDCD0003FB84 /* quizCollectionViewCell.swift */; };
@@ -45,6 +46,7 @@
 		BC86946022FAF9C6007C0796 /* Tajawal-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-ExtraBold.ttf"; sourceTree = "<group>"; };
 		BC913F3722ECBF6D00EB2EE3 /* DailyVerses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyVerses.swift; sourceTree = "<group>"; };
 		BC913F3922ECBFAB00EB2EE3 /* VersesBank.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VersesBank.txt; sourceTree = "<group>"; };
+		BC94D4A8248C221F0001275C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCD4025C22F7B6B20003FB84 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		BCD4025E22F7BA980003FB84 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		BCD4026022F7BDCD0003FB84 /* quizCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				BC57A4B322E4B301000642B7 /* Main.storyboard */,
+				BC94D4A8248C221F0001275C /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				BC4247FD22EEE62500A6F10A /* Assets.xcassets in Resources */,
 				BC913F3A22ECBFAC00EB2EE3 /* VersesBank.txt in Resources */,
 				BC57A4B522E4B301000642B7 /* Main.storyboard in Resources */,
+				BC94D4A9248C221F0001275C /* LaunchScreen.storyboard in Resources */,
 				BC6BEDBC22FB76EA0008503A /* Tajawal-Medium.ttf in Resources */,
 				BC86946122FAF9C6007C0796 /* Tajawal-ExtraBold.ttf in Resources */,
 			);
@@ -485,10 +489,11 @@
 			baseConfigurationReference = 611D27C253C52EEB8485918D /* Pods-ChristLife.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L3Y3NN5H2E;
 				INFOPLIST_FILE = "$(SRCROOT)/ChristLife/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,10 +510,11 @@
 			baseConfigurationReference = E419B43678B20206EB8C620C /* Pods-ChristLife.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L3Y3NN5H2E;
 				INFOPLIST_FILE = "$(SRCROOT)/ChristLife/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
