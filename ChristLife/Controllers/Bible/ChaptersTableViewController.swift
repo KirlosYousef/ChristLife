@@ -101,7 +101,9 @@ class ChaptersTableViewController: UITableViewController, UISearchBarDelegate {
         }
         // Use presentingViewController twice to go back two levels and call
         // dismissViewController to dismiss both viewControllers.
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: {
+            
+        })
     }
     
     

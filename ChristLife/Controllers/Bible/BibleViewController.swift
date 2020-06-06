@@ -50,6 +50,12 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.showData()
+    }
+    
+    
+    /// Shows the verses on the Bible view
+    func showData(){
         getVerses(book: self.currentBookID, Chapter: NSNumber(value: self.currentChapter), completion: {(verses) in
             self.activityIndicator.stopAnimating()
             if let verses = verses{
@@ -59,11 +65,12 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
             }})
     }
     
-    
+    /// To receive the data when the user chooses a book or chapte
     func pass(volume: String, book: String, chapter: Int) {
         self.currentBookID = book
         self.currentChapter = chapter
         self.currentVolume = volume
+        self.showData()
     }
     
     
