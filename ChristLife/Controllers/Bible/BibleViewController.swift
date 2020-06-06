@@ -91,8 +91,22 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     
     
     func updateData(text: String){
-        if let textView = self.versesTextView {
-            textView.text = text
+        if let textView = self.versesTextView {            
+            let font = UIFont.init(name: "Al Nile", size: 30)
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .right
+            paragraphStyle.paragraphSpacingBefore = 25
+            paragraphStyle.lineSpacing = 5
+            
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: font as Any,
+                .foregroundColor: UIColor.white,
+                .paragraphStyle: paragraphStyle
+            ]
+            
+            textView.attributedText = NSAttributedString(string: text, attributes: attributes)
+            
+            
             self.biblePageTitle.title = "\(currentBookName) \(currentChapter)"
         }
     }
