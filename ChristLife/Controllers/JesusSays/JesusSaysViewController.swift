@@ -23,11 +23,17 @@ class JesusSaysViewController: UIViewController {
         self.activityIndicator.hidesWhenStopped = true
         view.addSubview(self.activityIndicator)
         self.activityIndicator.startAnimating()
+        showVerseOfToday()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+    }
+    
+    /// Show today's verse.
+    func showVerseOfToday(){
         getVerseOfToday { (verse) in
             self.activityIndicator.stopAnimating()
             if let verse = verse {

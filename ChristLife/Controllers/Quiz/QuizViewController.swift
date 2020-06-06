@@ -61,8 +61,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        self.view.addSubview(gameEndView)
-        finalScoreLabel.text = String(score)
+        self.setGameEnded()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -114,8 +113,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func updateUI(){
         // If it was the last question
         if (questionNum == 9) {
-            self.view.addSubview(gameEndView)
-            finalScoreLabel.text = String(score)
+            self.setGameEnded()
         } else{
             questionNum += 1
             goToNextQuestion()
@@ -130,6 +128,13 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+    func setGameEnded(){
+        if self.questionNum != 0 || (self.timer != nil && self.timer.isValid){
+            gameEndView.frame = self.view.bounds
+            self.view.addSubview(gameEndView)
+            finalScoreLabel.text = String(score)
+        }
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -197,7 +202,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         questionNum = 0
         questionNumLabel.text = "1/10"
         goToNextQuestion()
-        self.view.sendSubviewToBack(gameEndView)
+        gameEndView.removeFromSuperview()
     }
     
     

@@ -1,21 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "ProgressBarBG-1.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
       "filename" : "ProgressBarBG.jpg",
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "ProgressBarBG-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

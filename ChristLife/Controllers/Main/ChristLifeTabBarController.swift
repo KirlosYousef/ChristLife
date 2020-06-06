@@ -19,9 +19,13 @@ class ChristLifeTabBarController: UITabBarController {
         super.viewDidLoad()
         // Transparent background for every UITabBar.
         let tabBar = UITabBar.appearance()
-        tabBar.barTintColor = UIColor.clear
-        tabBar.backgroundImage = UIImage()
-        tabBar.shadowImage = UIImage()
+        tabBar.clipsToBounds = true
+
+        let bgImage = UIImage(named: "ProgressBarBG")
+        let bgView: UIImageView = UIImageView(image: bgImage)
+        bgView.frame = tabBar.bounds
+        bgView.contentMode = .scaleAspectFit
+        tabBar.backgroundImage = bgView.image
         
         // Notification settings.
         jesusSaysVC.getVerseOfToday { (verse) in

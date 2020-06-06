@@ -20,6 +20,9 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var biblePageTitle: UINavigationItem!
     @IBOutlet weak var versesTextView: UITextView!
+    
+    
+    
     var verses: [DBTVerse] = []
     var text: String = ""
     var currentBookID: String = "Gen"
@@ -45,12 +48,12 @@ class BibleViewController: UIViewController, isAbleToReceiveData{
         booksButtonOutlet.layer.cornerRadius = 15
         booksButtonOutlet.clipsToBounds = true
         
+        self.showData()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.showData()
     }
     
     
