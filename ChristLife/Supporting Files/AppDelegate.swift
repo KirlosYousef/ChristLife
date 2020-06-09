@@ -17,20 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        DBT.setAPIKey("0722924a005918c1d4f6e5297c909438")
-//        application.setMinimumBackgroundFetchInterval(86500)
+        DBT.setAPIKey("YOUR DBT API")
         return true
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-//        jesusSaysVC.getVerseOfToday { (verse) in
-//            if let _ = verse {
-//                completionHandler(.newData)
-//                return
-//            } else {
-//                completionHandler(.failed)
-//            }
-//        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
